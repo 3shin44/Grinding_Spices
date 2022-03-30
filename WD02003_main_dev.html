@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研磨香料</title>
+    <link rel="stylesheet" href="./WD02003_main_dev.css">
+</head>
+<body>
+    <!-- NavigateBar -->
+    <div class="MainNavi">
+        <div class="MainNavi__Logo">
+            <a href="./WD02003_main_dev.html">
+                <img src="./images_dev/GS_Logo.png">
+            </a>
+            <h1>研磨香料</h1>
+        </div>
+        <div class="MainNavi__Menu">
+            <a href="./WD02003_CusRecipe.html">
+                <button>客製香料</button>
+            </a>
+            <a href="javascript:;">熱門食譜</a>
+            <a href="javascript:;">香料型錄</a>
+            <a href="javascript:;">來店選購</a>
+        </div>
+    </div>
+    
+    <!-- MainPage Slogan -->
+    <div class="Background BgMain">
+        <!-- 外部抄來的動畫 -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <!-- <div class="numbertext">1 / 3</div> -->
+              <img src="./images_dev/Main__BgPic01.jpg" style="width:100%">
+              <!-- <div class="text">Caption Text</div> -->
+            </div>
+            
+            <div class="mySlides fade">
+              <!-- <div class="numbertext">2 / 3</div> -->
+              <img src="./images_dev/Main__BgPic02.jpg" style="width:100%">
+              <!-- <div class="text">Caption Two</div> -->
+            </div>
+            
+            <div class="mySlides fade">
+              <!-- <div class="numbertext">3 / 3</div> -->
+              <img src="./images_dev/Main__BgPic03.jpg" style="width:100%">
+              <!-- <div class="text">Caption Three</div> -->
+            </div>
+            
+        </div>
+            <br>
+            
+        <div class="dot_indicator" style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+            
+        <script>
+            let slideIndex = 0;
+            showSlides();
+            
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 3500); // Change image every 2 seconds
+            }
+        </script>
+        <!-- 外部抄來的動畫 -->
+        <div class="Content ContentMain">
+
+            <!-- <div class="Main__Slogan">
+                <p>不再為死版味道煩惱，組建專屬香料組合</p>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Customerize Recipe -->
+    <div class="Background BgCusRecipe">
+
+        <div class="Content ContentCusRecipe">
+            <div class="CusRecipe__Row">
+                <div class="CusRecipe__Jigsaw">
+                    <img src="./images_dev/CusRecipe__Jigsaw.png">
+                </div>
+                <div class="BgCusRecipe__BgPic">
+                    <img src="./images_dev/CusRecipe__BgPic.jpg" alt="">
+                </div>
+                <div class="BgCusRecipe__BgShadow">
+                </div>
+            </div>
+            <div class="CusRecipe__Row CusRecipe__RowInfo">
+                <div class="CusRecipe__Col">
+                    <h2>客製化香料組合</h2>
+                </div>
+                <div class="CusRecipe__Col">
+                    <p>自由組合香料，</p>
+                    <p>後期加工處理，</p>
+                    <p>成品宅配服務。</p>
+                    <p>一次到位</p>
+                </div>
+                <div class="CusRecipe__Col">
+                    <button>建立香料組合</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Recipe -->
+    <div class="Background BgPopRecipe">
+        <div class="Content ContentPopRecipe">
+            <div class="PopRecipe_Row">
+                <div class="PopRecipe__Col">
+                    <h2>熱門食譜</h2>
+                </div>
+                <div class="PopRecipe__Col ColBar">
+                </div>
+                <div class="PopRecipe__Col">
+                    <p>令人驚豔的料理
+                        就缺香料臨門一腳</p>
+                </div>
+                <div class="PopRecipe__Col">
+                    <button>熱門食譜</button>
+                </div>
+                <div class="PopRecipe__Col PopRecipe__ColBox">
+                    <div class="PopRecipe__RecipeBox">
+                        <div class="PopRecipe__Card">
+                            <img src="./images_dev/PopRecipe__Seasoning.jpg">
+                            <p>肉類醃漬</p>
+                        </div>
+                        <div class="PopRecipe__Card">
+                            <img src="./images_dev/PopRecipe__BBQ.jpg">
+                            <p>燒烤/炸物</p>
+                        </div>
+                        <div class="PopRecipe__Card">
+                            <img src="./images_dev/PopRecipe__Stew.jpg">
+                            <p>慢火燉煮</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop -->
+    <div class="Background BgShop">
+        <div class="Content ContentShop">
+            <div class="Shop__Row">
+                <div class="Shop__BackPic">
+                    <img src="./images_dev/Shop__BackPic01.png" alt="">
+                </div>
+                <div class="Shop__Col">
+                    <h2>來店選購</h2>
+                </div>
+                <div class="Shop__Col ColBar">    
+                </div>
+                <div class="Shop__Col">
+                    <div class="Shop__LocationBox">
+                        <div class="Shop__LocationMap">
+                            <img src="./images_dev/Shop__Location.png">
+                        </div>
+                        <div class="Shop__info">
+                            <p>台中店</p>
+                            <p>地址：臺中市東屯區建國路五段87號</p>
+                            <p>電話：(04)2228-0322</p>
+                            <p>營業時間：一至五　8:00-17:00</p>
+                        </div>
+                    </div>
+                    <div class="Shop__LocationBox">
+                        <div class="Shop__LocationMap">
+                            <img src="./images_dev/Shop__Location.png">
+                        </div>
+                        <div class="Shop__info">
+                            <p>台南店</p>
+                            <p>地址：臺南市東里區山下路二段6號</p>
+                            <p>電話：(06)199-12121</p>
+                            <p>營業時間：一至五　8:00-17:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking -->
+    <div class="Background BgBooking">
+        <div class="Content ContentBooking">
+            <div class="Booking__Row">
+                <div class="Booking__BackPic">
+                    <img src="./images_dev/Booking__BackPic01.png" alt="">
+                </div>
+                <div class="Booking__Col">
+                    <img src="./images_dev/Booking__Manufacturing.jpg">
+                </div>
+                <div class="Booking__Col Booking__ColSafety">
+                    <h2>食品安全</h2>
+                    <p>本廠通過HACCP認證</p>
+                    <p>登記參觀廠區，食品安全透明可見</p>
+                    <div class="Booking__Col ColBar"></div>
+                    <div class="Booking__Form">
+                        <form action="" method="post">
+
+                            <h3>登記參觀</h3>
+                            <p>姓名</p>
+                            <input type="text" name="name" placeholder="請輸入姓名">
+                            <p>聯繫電話</p>
+                            <input type="tel" name="name" placeholder="請輸入電話">
+                           
+                            <p>日期</p>
+                            <input type="date">
+                        
+                            <p>人數</p>
+                            <select>
+                                <option>1~5人</option>
+                                <option>6~10人</option>
+                                <option>10人以上</option>
+                            </select>
+                            
+                            <p><input type="submit" value="送出資料"></p>
+                        
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Footer -->
+    <div class="Background BgFooter">
+        <div class="Content ContentFooter">
+            <div class="Footer">
+                <h2>版權聲明</h2>
+                <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
