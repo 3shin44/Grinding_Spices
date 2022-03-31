@@ -551,3 +551,56 @@ height: 450px;
 .PopularRecipePage__Tag p{
     font-size: 15px;
 }
+
+/* 來店選購 */
+.ShopPage{
+    margin-top: 80px;
+    text-align: center;
+}
+.ContentShopPage{
+    background-color: rgba(183, 70, 0, 0.3);
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+.ShopPage__Col{
+    width: 25%;
+}
+.ShopPage__Col1{
+    position: absolute;
+    z-index: -1;
+    top: -50px;
+    left: -50px;
+}
+.ShopPage__Col2{
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+}
+.ShopPage__Col2 h3{
+    font-size: 30px;
+    color: #F2ECE8;
+    /* display: inline; */
+    writing-mode: vertical-lr;
+}
+.ShopPage__Col2 p{
+    writing-mode: vertical-lr;
+}
+.ShopPage__Card{
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
+}
+.ShopPage__CardPic img{
+    width: 100%;
+}
+.ShopPage__Co3{
+    position: relative;
+}
+.ShopPage__Co3>.ShopPage__Card{
+    position: relative;
+    top: -40px;
+}
