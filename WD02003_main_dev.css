@@ -486,3 +486,68 @@ height: 450px;
 .Confirm{
     color: #F2ECE8;
 }
+
+/* PopularRecipePage */
+.ContentPopularRecipePage h2{
+    margin: 80px 0 20px 0;
+    text-align: center;
+}
+.ContentPopularRecipePage h3{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.MeatSeaoning{
+    background-color: #af9b8e;
+}
+.ContentPopularRecipePage{
+    padding: 15px;
+}
+.PopularRecipePage__RecipeCard{
+    display: flex;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(113, 113, 113, 0.7);
+    border-radius: 15px;
+}
+.PopularRecipePage__Col{
+    padding: 10px;
+    margin: 0 5px 0 5px;
+}
+.PopularRecipePage__Col1{
+    position: relative;
+}
+.PopularRecipePage__RecipeTitle img{
+    width: 100%;
+}
+.PopularRecipePage__RecipeTitle{
+    position: absolute;
+    width: 80%;
+    top: 10px;
+    left:10px;
+    background-color: rgba(235, 235, 235,0.8);
+}
+.PopularRecipePage__RecipeTitle p{
+    color: #373229;
+    font-weight: bold;
+    text-align: center;
+}
+.PopularRecipePage__ColSpan{
+    display: flex;
+}
+.PopularRecipePage__Col span{
+    width: 1px;
+    background-color:#373229;
+}
+.PopularRecipePage__Tag{
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    border-radius: 0  0 15px 0;
+    background-color: #B74600;
+}
+.PopularRecipePage__Tag p{
+    font-size: 15px;
+}
