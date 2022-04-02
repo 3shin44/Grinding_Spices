@@ -243,7 +243,6 @@ p{
     display: flex;
     flex-direction: column;
 }
-
 .Shop__LocationBox{
     width: 110%;
     display: flex;
@@ -255,10 +254,12 @@ p{
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+.Shop__LocationBox:first-child{
+    flex-direction: row-reverse;
+}
 .Shop__info{
     margin: 20px;
 }
-
 .Shop__LocationMap img{
     width: 150px;
     height: 150px;
