@@ -74,6 +74,16 @@ p{
     height: 50px;
     width: 50px;
 }
+.MainNavi__Menu ul{
+    list-style-type: none;
+    display:table-cell;
+}
+.MainNavi__Menu li{
+    float: left;
+    margin: 10px;
+    text-align:center;
+    vertical-align:middle;
+}
 .MainNavi__Menu button{
     background-color: #B74600;
     border-radius: 7px;
@@ -82,9 +92,11 @@ p{
     font-weight: bold;
 }
 .MainNavi__Menu a{
-    margin-left: 15px;
     color: #373229;
     font-weight: bold;
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 /* MainPage Slogan */
@@ -146,7 +158,7 @@ p{
 
 /* Popular Recipe */
 .BgPopRecipe{
-    background-image: url(./images_dev/PopRecipe__BgPic.jpg);
+    background-image: url(./images/PopRecipe__BgPic.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1200px 400px;
@@ -202,7 +214,7 @@ p{
 
 /* Shop */
 /* .BgShop{
-    background-image: url(./images_dev/Shop__BackPic01.png);
+    background-image: url(./images/Shop__BackPic01.png);
     background-repeat: no-repeat;
     background-position: right;
     background-size: 300px 300px;
@@ -259,7 +271,7 @@ p{
 
 /* Booking */
 /* .BgBooking{
-    background-image: url(./images_dev/Booking__BackPic01.png);
+    background-image: url(./images/Booking__BackPic01.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 300px 450px;
