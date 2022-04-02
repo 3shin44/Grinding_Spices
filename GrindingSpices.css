@@ -23,6 +23,9 @@ a{
 h1{
     color: #373229;
 }
+h3.dark{
+    color: #373229;
+}
 .Background{
     width: 100%;
 }
@@ -42,6 +45,11 @@ button{
 p{
     font-family: var(--GlobalFont);
     color: #F2ECE8;
+	line-height: 30px;
+}
+p.dark{
+    font-family: var(--GlobalFont);
+    color: #373229;
 	line-height: 30px;
 }
 
@@ -573,6 +581,12 @@ height: 450px;
 }
 
 /* 來店選購 */
+.BgShopPage1{
+    background-image: url("./images/Shop__bcg.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed;
+}
 .ShopPage{
     margin-top: 80px;
     text-align: center;
@@ -581,8 +595,11 @@ height: 450px;
     display: flex;
     justify-content: space-evenly;
     position: relative;
-    padding: 50px;
+    padding: 80px;
     margin-bottom: 30px;
+}
+.ContentShopPageTN{
+    flex-direction: row-reverse;
 }
 .ShopPage__Col{
     width: 25%;
@@ -601,8 +618,8 @@ height: 450px;
     left: 0;
 }
 .ShopPage__Col2 h3{
+    padding-top: 20px;
     font-size: 30px;
-    color: #F2ECE8;
     writing-mode: vertical-lr;
 }
 .ShopPage__Col2 p{
@@ -611,10 +628,12 @@ height: 450px;
 .ShopPage__Card{
     background-color: rgba(183, 70, 0,0.7);
     padding: 10px;
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
 }
 .ShopPage__CardPic img{
     width: 100%;
+    border-radius: 10px;
 }
 .ShopPage__Co3{
     position: relative;
@@ -622,18 +641,6 @@ height: 450px;
 .ShopPage__Co3>.ShopPage__Card{
     position: relative;
     top: -40px;
-}
-.ShopPage__Col2TN{
-    left: 93%;
-}
-.ShopPage__Col1TN{
-    position: absolute;
-    z-index: -1;
-    top: -50px;
-    left: 83%;
-}
-.ShopPage__Col1TN img{
-    transform: scaleX(-1);
 }
 
 /* QualityAssure */
