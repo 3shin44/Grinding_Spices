@@ -234,6 +234,7 @@ p{
     bottom: 10px;
     right: 5%;
     z-index: -1;
+    opacity: 0.5;
 }
 .Shop__BackPic img{
     width: 300px;
@@ -292,7 +293,7 @@ p{
 .Booking__BackPic img{
     width: 300px;
     height: 500px;
-    
+    opacity: 0.5;
 }
 .Booking__ColSafety{
     display: flex;
@@ -633,4 +634,63 @@ height: 450px;
 }
 .ShopPage__Col1TN img{
     transform: scaleX(-1);
+}
+
+/* QualityAssure */
+.QualityAssure{
+    padding: 80px 0 20px 0;
+    text-align: center;
+}
+.ContentQualityAssure img{
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 2.6px;
+}
+.ContentQualityAssureEquitment{
+    background-color: rgba(190, 190, 190,0.5);
+}
+.ContentQualityAssureTraining{
+    background-color: rgba(134, 134, 134, 0.5);
+}
+.QualityAssure__Row{
+    display: flex;
+}
+.QualityAssure__Row:last-child{
+    flex-direction: row-reverse;
+}
+.QualityAssure__Col{
+    padding: 20px;
+    flex: 1;
+}
+.QualityAssure__Col h3{
+    margin-top: 20px;
+}
+.QualityAssure__ColPic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.QualityAssure__Col span{
+    display: block;
+    border-top: 5px dotted black;
+    margin: 20px;
+}
+.QualityAssure__ColPicQuard{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.QualityAssure__ColPic2{
+    width: 50%;
+}
+.QualityAssure__ColPicNoneShift{
+    padding: 10px;
+}
+.QualityAssure__ColPic2 img{
+    width: 100%;
+}
+.QualityAssure__ColPicShift{
+    position: relative;
+    top: -50px;
+    left: -30px;
 }
