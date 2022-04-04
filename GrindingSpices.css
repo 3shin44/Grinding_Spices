@@ -109,24 +109,27 @@ p.dark{
 }
 
 /* MainPage Slogan */
-.BgMain{
-    height: 400px;
-}
-
 .Main__Slogan{
-    padding-left: 50px;
-    text-align: left;
+    height: 230px;
+    position: absolute;
+    writing-mode: vertical-rl;
+    top: 30%;
+    left: 30%;
+}
+.Main__Slogan p{
+    background-color: rgba(113, 113, 113, 0.3);
+    font-size: 20px;
+    text-shadow: #373229 0.1px 0.1px 0.1pxs;
 }
 
 /* Customerize Recipe */
-.CusRecipe__Row{
-    position: relative;
+.BgCusRecipe{
+    background-image: url('./images/DecroBar.png');
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 .BgCusRecipe__BgPic{
-    position: absolute;
-    top:10%;
-    left:30%;
-    z-index: -1;
+    
     box-shadow: 15px 15px #883806;
 }
 .BgCusRecipe__BgPic img{
@@ -136,9 +139,7 @@ p.dark{
 }
 .ContentCusRecipe{
     display: flex;
-	height: 400px;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 20%, rgba(79,44,6,0.8) 100%); 
+    height: 800px;
 }
 .CusRecipe__Row{
     width: 50%;
@@ -152,13 +153,15 @@ p.dark{
 .CusRecipe__RowInfo{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-
-    
 }
 .CusRecipe__Col h2{
     color: #F2ECE8;
+}
+.CusRecipe__ColText{
+    width: 50%;
+    margin: auto;
 }
 .CusRecipe__Col button{
     color: #F2ECE8;
@@ -167,10 +170,13 @@ p.dark{
 
 /* Popular Recipe */
 .BgPopRecipe{
-    background-image: url(./images/PopRecipe__BgPic.jpg);
+    background-image: url('./images/DecroBar_flip.png'), url('./images/PopRecipe__BgPic.jpg');
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1200px 400px;
+    background-position: top center;
+   
+}
+.ContentPopRecipe{
+    height: 900px;
 }
 
 .PopRecipe__ColBox{
@@ -190,7 +196,7 @@ p.dark{
     justify-content: space-evenly;
     align-items: center;
 
-    background: linear-gradient(0deg, rgba(255,255,255,0) 20%, rgba(79,44,6,0.8) 100%); 
+
 }
 
 .PopRecipe__RecipeBox{
@@ -356,7 +362,7 @@ margin: 5px 0 5px 0;
     color: var(--TextColor);
 }
 
-/* 外部抄來的動畫 */
+/* Slide Show */
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
@@ -364,36 +370,16 @@ img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1200px;
+  max-width: 1920px;
   position: relative;
-  top:-50px;
-  left:0;
-  right:0;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 .mySlides img{
-height: 450px;
+height: 100%;
 }
-
-/* Caption text */
-/* .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-} */
-
-/* Number text (1/3 etc) */
-/* .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-} */
 
 /* The dots/bullets/indicators */
 .dot {
@@ -408,7 +394,7 @@ height: 450px;
 
 .dot_indicator{
     position: absolute;
-    top: 350px;
+    top: 1000px;
     left: 50%;
 }
 
