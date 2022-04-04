@@ -144,12 +144,25 @@ p.dark{
 .CusRecipe__Row{
     width: 50%;
 }
-.CusRecipe__Jigsaw img{
+.JigsawBottom{
     position: relative;
-    left: 50%;
-    width: 35%;
-    transform: rotate(-35deg);
+    top: 150px;
 }
+.JigsawBottom img{
+    width: 500px;
+}
+.JigsawFloat{
+    position: absolute;
+    top:630px;
+    height: 500px;
+}
+.JigsawFloat img{
+    width: 250px;
+    position: sticky;
+    top:250px;
+}
+
+
 .CusRecipe__RowInfo{
     display: flex;
     flex-direction: column;
@@ -321,6 +334,7 @@ p.dark{
     border: 2px solid #8C6740;
     margin: 10px;
     padding: 10px;
+    margin: auto;
 }
 .Booking__Form h3{
     text-align: center;
@@ -382,7 +396,7 @@ height: 100%;
 
 .dot_indicator{
     position: absolute;
-    top: 1000px;
+    bottom: 50px;
     left: 50%;
 }
 
@@ -459,7 +473,6 @@ height: 100%;
 }
 
 .SelectedItem{
-    /* background-color: #B74600; */
     margin-bottom: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -557,13 +570,21 @@ height: 100%;
 
 /* 來店選購 */
 .BgShopPage1{
-    background-image: url("./images/Shop__bcg.png");
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-image: url("./images/Shop__bcg1.png");
+    background-position: left;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+.BgShopPage2{
+    background-image: url("./images/Shop__bcg2.png");
+    background-position: left;
+    background-repeat: no-repeat;
+
     background-attachment: fixed;
 }
 .ShopPage{
-    margin-top: 80px;
+    margin-top: 100px;
     text-align: center;
 }
 .ContentShopPage{
@@ -571,7 +592,6 @@ height: 100%;
     justify-content: space-evenly;
     position: relative;
     padding: 80px;
-    margin-bottom: 30px;
 }
 .ContentShopPageTN{
     flex-direction: row-reverse;
@@ -610,12 +630,20 @@ height: 100%;
     width: 100%;
     border-radius: 10px;
 }
-.ShopPage__Co3{
+.ShopPage__Co1, .ShopPage__Co2, .ShopPage__Co3{
     position: relative;
+}
+.ShopPage__Co1>.ShopPage__Card{
+    position: relative;
+    top: 0;
+}
+.ShopPage__Co2>.ShopPage__Card{
+    position: relative;
+    top: -30px;
 }
 .ShopPage__Co3>.ShopPage__Card{
     position: relative;
-    top: -40px;
+    top: -60px;
 }
 
 /* QualityAssure */
@@ -633,10 +661,13 @@ height: 100%;
 .ContentQualityAssureTraining{
     background-color: rgba(134, 134, 134, 0.5);
 }
+.ContentQualityAssureBooking{
+    background-color: rgba(87, 87, 87, 0.5);
+}
 .QualityAssure__Row{
     display: flex;
 }
-.QualityAssure__Row:last-child{
+.QualityAssure__RowReverse{
     flex-direction: row-reverse;
 }
 .QualityAssure__Col{
@@ -651,6 +682,9 @@ height: 100%;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+.QualityAssure__ColPic img{
+    width: 100%;
 }
 .QualityAssure__Col span{
     display: block;
