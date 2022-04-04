@@ -173,14 +173,13 @@ p.dark{
     background-image: url('./images/DecroBar_flip.png'), url('./images/PopRecipe__BgPic.jpg');
     background-repeat: no-repeat;
     background-position: top center;
-   
 }
 .ContentPopRecipe{
+    display: flex;
     height: 900px;
 }
-
-.PopRecipe__ColBox{
-    width: 100%;
+.PopRecipe_Row{
+    flex: 1;
 }
 .PopRecipe__Col h2{
     color: #F2ECE8;
@@ -190,24 +189,13 @@ p.dark{
     color:#F2ECE8;
 }
 .PopRecipe_Row{
-    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
-
-}
-
-.PopRecipe__RecipeBox{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1;
 }
 .PopRecipe__Card{
     display: flex;
-    flex-direction: column;
     align-items: center;
 
     background-color: #F6F3E2;
