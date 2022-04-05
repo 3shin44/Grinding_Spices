@@ -568,14 +568,12 @@ img {vertical-align: middle;}
     background-image: url("./images/Shop__bcg1.png");
     background-position: left;
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 }
 .BgShopPage2{
     background-image: url("./images/Shop__bcg2.png");
     background-position: left;
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 }
 .ShopPage{
