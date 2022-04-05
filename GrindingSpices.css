@@ -6,10 +6,7 @@
 
 /* Golbal setting */
 :root {
-    --GlobalFont: Noto Sans TC,Noto Sans;
     --NavHeight:50px;
-    --ContentPadding:0;
-    --TextColor:#F2ECE8;
     letter-spacing: 1px;
     font-family:Noto Sans TC,Noto Sans;
 }
@@ -19,38 +16,73 @@ body{
 }
 a{
     text-decoration: none;
-    font-family: var(--GlobalFont);
 }
 h1{
     color: #373229;
 }
+h2{
+    font-size: 26px;
+}
+h3{
+    font-size: 22px;
+}
 h3.dark{
     color: #373229;
 }
+/* font size and color */
+/* 1. font size */
+.Subtitle{
+    font-size: 20px;
+}
+.RegularText{
+    font-size: 16px;
+}
+.TagText{
+    font-size: 14px;
+}
+/* 2. font color and weight*/
+.Dark{
+    color: #373229;
+}
+.Light{
+    color: #F2ECE8;
+}
+.TextBold{
+    font-weight: bold;
+}
+/* 3. (optional) shadow effect */
+.TextShadowDark{
+    text-shadow: 3px 4px 7px rgba(71, 37, 15, 0.8);
+}
+.TextShadowLight{
+    text-shadow: 3px 4px 7px rgba(241, 218, 174, 0.8);
+}
+
+/* General property set */
 .Background{
     width: 100%;
 }
 .Content{
     max-width: 1200px;
-    padding: var(--ContentPadding);
     margin: auto;
 }
-button{
+button.Primary{
     letter-spacing: 1px;
-    font-family: var(--GlobalFont);
+    padding: 5px;
+    background-color: #B74600;
+    border-radius: 7px;
+    font-size: 20px;
+    font-weight: bold;
+}
+button.Secondary{
+    padding: 5px;
+    letter-spacing: 1px;
     background-color: #B74600;
     border-radius: 7px;
     font-size: 16px;
     font-weight: bold;
 }
 p{
-    font-family: var(--GlobalFont);
-    color: #F2ECE8;
-	line-height: 30px;
-}
-p.dark{
-    font-family: var(--GlobalFont);
-    color: #373229;
 	line-height: 30px;
 }
 
@@ -161,8 +193,6 @@ p.dark{
     position: sticky;
     top:250px;
 }
-
-
 .CusRecipe__RowInfo{
     display: flex;
     flex-direction: column;
@@ -215,27 +245,17 @@ p.dark{
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-
-.PopRecipe__Card p{
-    color: #373229;
-    font-weight: bold;
-}
-
 .PopRecipe__Card img{
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px 0 0 10px;
     width: 150px;
     height: 150px;
 }
 
 
 /* Shop */
-/* .BgShop{
-    background-image: url(./images/Shop__BackPic01.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 300px 300px;
-} */
 .ContentShop{
+    padding-top: 80px;
+    padding-bottom: 80px;
 	border-bottom-style: dotted;
 }
 .Shop__Row{
@@ -271,7 +291,7 @@ p.dark{
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.Shop__LocationBox:first-child{
+.Shop__LocationBox:last-child{
     flex-direction: row-reverse;
 }
 .Shop__info{
@@ -282,18 +302,9 @@ p.dark{
     height: 150px;
 }
 
-.Shop__LocationBox:last-child{
-    display: flex;
-    flex-direction: row-reverse;
-}
 
 /* Booking */
-/* .BgBooking{
-    background-image: url(./images/Booking__BackPic01.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 300px 450px;
-} */
+
 .Booking__Row{
     position: relative;
     display: flex;
@@ -366,7 +377,7 @@ margin: 5px 0 5px 0;
 
 /* Slide Show */
 * {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
+/* body {font-family: Verdana, sans-serif;} */
 .mySlides {display: none;}
 img {vertical-align: middle;}
 
@@ -529,13 +540,17 @@ height: 100%;
     border-radius: 15px;
 }
 .PopularRecipePage__Col{
+    flex: 1;
     padding: 10px;
     margin: 0 5px 0 5px;
+}
+.PopularRecipePage__ColSpan{
+    flex: 0.1;;
 }
 .PopularRecipePage__Col1{
     position: relative;
 }
-.PopularRecipePage__RecipeTitle img{
+.PopularRecipePage__Col1 img{
     width: 100%;
 }
 .PopularRecipePage__RecipeTitle{
