@@ -73,14 +73,22 @@ button.Primary{
     border-radius: 7px;
     font-size: 20px;
     font-weight: bold;
+    transition: 0.5s;
 }
 button.Secondary{
     padding: 5px;
     letter-spacing: 1px;
-    background-color: #B74600;
+    background-color: #f3ba96;
     border-radius: 7px;
     font-size: 16px;
     font-weight: bold;
+    transition: 0.5s;
+}
+button.Primary:hover{
+    background-color: #dd6b24;;
+}
+button.Secondary:hover{
+    background-color: #c0b9b0;;
 }
 p{
 	line-height: 30px;
@@ -124,13 +132,6 @@ p{
     margin: 10px;
     text-align:center;
     vertical-align:middle;
-}
-.MainNavi__Menu button{
-    background-color: #B74600;
-    border-radius: 7px;
-    padding: 10px;
-    color: #F2ECE8;
-    font-weight: bold;
 }
 .MainNavi__Menu a{
     color: #373229;
@@ -181,16 +182,6 @@ p{
 }
 .JigsawBottom img{
     width: 500px;
-}
-.JigsawFloat{
-    position: absolute;
-    top:630px;
-    height: 500px;
-}
-.JigsawFloat img{
-    width: 250px;
-    position: sticky;
-    top:250px;
 }
 .CusRecipe__RowInfo{
     display: flex;
@@ -501,16 +492,7 @@ height: 100%;
     justify-content: end;
 }
 .OrderStatus button{
-    height: 60px;
-    width: 60px;
-    margin: 10px;
-}
-.Cancel{
-    background-color: #E2CDB3;
-    color: #af9b8e;
-}
-.Confirm{
-    color: #F2ECE8;
+    margin: 15px;
 }
 
 /* PopularRecipePage */
@@ -721,6 +703,6 @@ height: 100%;
 }
 .QualityAssure__ColPicShift{
     position: relative;
-    top: -50px;
+    top: -30px;
     left: -30px;
 }
