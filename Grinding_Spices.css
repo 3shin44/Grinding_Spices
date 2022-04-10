@@ -1,6 +1,8 @@
 /* Golbal setting */
 html, body{
     background-color: #fb957c;
+    letter-spacing: 1px;
+    font-family:Noto Sans TC,Noto Sans;
 }
 a{
     text-decoration: none;
@@ -357,6 +359,7 @@ li{
 }
 .Main__StoryPic{
     box-sizing: border-box;
+    padding: 30px;
 }
 .Main__StoryPic img{
     width: 100%;
@@ -383,13 +386,13 @@ li{
     }
     .Main__StoryPic img{
         position: relative;
-        top: 20%;
+        top: 3%;
     }
 }
 
 /* Products */
 .Main__ProductsBackground{
-    padding: 30px 0 30px 0;
+    padding: 50px 0 30px 0;
 }
 .Main__ProductsBackground>article{
     text-align: center;
@@ -414,6 +417,7 @@ li{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    padding-top: 30px;
 }
 @media screen and (max-width: 1199px) {
     .Main__ProductsPrimary{
@@ -425,14 +429,15 @@ li{
     .Main__ProductsText>p:nth-child(2){
         padding: 30px;
     }
+
+}
+@media screen and (min-width: 1200px) {
     .Main__ProductsPic img{
         position: relative;
         top: 0;
         width: 50%;
         padding-left: 25%;
     }
-}
-@media screen and (min-width: 1200px) {
     .Main__ProductsCard:hover{
         cursor: pointer;
     }
