@@ -1,0 +1,622 @@
+/* Golbal setting */
+html, body{
+    background-color: #fb957c;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.Background{
+    width: 100%;
+}
+.ContentRow{
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* Universal components */
+/* Universal components font */
+.MainFontColor{
+    color: #efefef;
+}
+.SecondFontColor{
+    color: #ec6d4e;
+}
+.MainBcgColor{
+    background-color: #fb957c;
+}
+.SecondBcgColor{
+    background-color: #faf0eb;
+}
+
+/* Universal Breakpoint for columns */
+@media screen and (max-width:995px) {
+    .col-md-1{ width: 8.333333%;}
+    .col-md-2{ width: 16.666666%;}
+    .col-md-3{ width: 25%;}
+    .col-md-4{ width: 33.333333%;}
+    .col-md-5{ width: 41.666666%;}
+    .col-md-6{ width: 50%;}
+    .col-md-7{ width: 58.333333%;}
+    .col-md-8{ width: 66.666666%;}
+    .col-md-9{ width: 75%;}
+    .col-md-10{ width: 83.333333%;}
+    .col-md-11{ width: 91.666666%;}
+    .col-md-12{ width: 100%;}
+}
+
+@media screen and (min-width: 996px) {
+    .col-lg-1{ width: 8.333333%;}
+    .col-lg-2{ width: 16.666666%;}
+    .col-lg-3{ width: 25%;}
+    .col-lg-4{ width: 33.333333%;}
+    .col-lg-5{ width: 41.666666%;}
+    .col-lg-6{ width: 50%;}
+    .col-lg-7{ width: 58.333333%;}
+    .col-lg-8{ width: 66.666666%;}
+    .col-lg-9{ width: 75%;}
+    .col-lg-10{ width: 83.333333%;}
+    .col-lg-11{ width: 91.666666%;}
+    .col-lg-12{ width: 100%;}
+}
+
+@media screen and (min-width:1200px) {
+    .col-xl-1{ width: 8.333333%;}
+    .col-xl-2{ width: 16.666666%;}
+    .col-xl-3{ width: 25%;}
+    .col-xl-4{ width: 33.333333%;}
+    .col-xl-5{ width: 41.666666%;}
+    .col-xl-6{ width: 50%;}
+    .col-xl-7{ width: 58.333333%;}
+    .col-xl-8{ width: 66.666666%;}
+    .col-xl-9{ width: 75%;}
+    .col-xl-10{ width: 83.333333%;}
+    .col-xl-11{ width: 91.666666%;}
+    .col-xl-12{ width: 100%;}
+}
+
+
+/* MainPage */
+
+.Header{
+    height: 100px;
+    background-color: rgba(179, 59, 4, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    position: relative;
+}
+.Cart{
+    background-color: aliceblue;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+}
+.Cart:hover{
+    background-color: #fcd7cd;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.Hamburger{
+    position: relative;
+    border: 2px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+.Hamburger span{
+    width: 36px;
+    height: 2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #faf0eb;
+    position: absolute;
+}
+.Hamburger span:first-child{
+    top: 9px;
+}
+.Hamburger span:nth-child(2){
+    top: 19px;
+}
+.Hamburger span:last-child{
+    top: 29px;
+}
+
+#SwitchMenu{
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    z-index: 5;
+}
+#SwitchMenu:checked ~ .Header .Hamburger span:first-child{
+    top: 19px;
+    transform: rotate(45deg);
+    transition: top .3s, transform .3s .3s;
+}
+#SwitchMenu:checked ~ .Header .Hamburger span:nth-child(2){
+    opacity: 0;
+    transition: left .3s, opacity .3s, transform .3s .3s;
+}
+#SwitchMenu:checked ~ .Header .Hamburger span:last-child{
+    top: 19px;
+    transform: rotate(-45deg);
+    transition: top .3s, transform .3s .3s;
+}
+
+#SwitchMenu ~ .Header .Hamburger span:first-child{
+    top: 9px;
+    transform: rotate(0deg);
+    transition: transform .3s, top .3s .3s;
+}
+#SwitchMenu ~ .Header .Hamburger span:nth-child(2){
+    opacity: 1;
+    transition: opacity 2s;
+}
+#SwitchMenu ~ .Header .Hamburger span:last-child{
+    transform: rotate(0deg);
+    top: 29px;
+    transition: transform .3s, top .3s .3s;
+}
+#SwitchMenu:checked ~ .Header nav{
+    left: 0;
+}
+
+@media screen and (max-width: 1199px) {
+    .Hamburger{
+        display: inline;
+    }
+    .DesktopLogin{
+        display: none;
+    }
+    .SmallLogin{
+        display: block;
+    }
+    nav{
+        position: absolute;
+        z-index: 2;
+        top: 100%;
+        display: flex;
+        flex-direction: column;
+        left: -100%;
+        transition: 1s;
+        background-color: #efefef;
+    }
+    nav a{
+        padding: 20px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .Hamburger{
+        display: none;
+    }
+    .SmallLogin{
+        display: none;
+    }
+}
+
+/* Banner */
+.Main__BannerBackground{
+    position: relative;
+}
+.Main__BannerBackground>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Main__Content{
+    display: flex;
+}
+.Main__Slogan{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.Main__Slogan p{
+    writing-mode: vertical-rl;
+}
+.Main__GalleryShow{
+    width: 70%;
+}
+.Main__GalleryShow img{
+    display: block;
+    aspect-ratio: 3/2;
+    width: 100%;
+}
+
+/* About Us */
+.Main__AboutUsBackground{
+    padding: 30px 0 30px 0;
+}
+.Main__AboutUsContent{
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+}
+.Main__AboutUsArticle{
+    padding: 30px;
+    text-align: center;
+}
+.Main__AboutUsCard{
+    position: relative;
+
+    background-color: gray;
+    aspect-ratio: 1/1.2;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+@media screen and (max-width: 995px) {
+    .Main__AboutUsContent{
+        background-image: url('https://picsum.photos/768/1024/?random=10');
+        aspect-ratio: 1/1.2;
+    }
+    .Main__AboutUsCard{
+        top : 10%;
+        width: 80%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 996px) {
+    .Main__AboutUsContent{
+        background-image: url('https://picsum.photos/1280/1024/?random=10');
+        aspect-ratio: 4/3;
+    }
+    .Main__AboutUsCard{
+        top : 20%;
+        width: 50%;
+        margin: 0 0 0 0;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .Main__AboutUsCard{
+        top : 30%;
+        width: 40%;
+        margin: 0 0 0 30px;
+    }
+}
+
+/* SlideShow */
+.Main__SlideShow{
+    height: 100px;
+    background-color: green;
+}
+
+/* Features */
+.Main__FeaturesBackground{
+    padding: 30px 0 30px 0;
+}
+.Main__FeaturesBackground>article{
+    padding-bottom: 30px;
+    text-align: center;
+}
+.Main__Features{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.Main__FeaturesCol{
+    padding: 15px;
+    box-sizing: border-box;
+}
+.Main__FeaturesCard{
+    background-color: wheat;
+    position: relative;
+}
+.Main__FeaturesCard_Label{
+    position: absolute;
+    top: -10px;
+    font-size: 22px;
+}
+.Main__FeaturesCard h3{
+    padding: 15px;
+}
+.Main__FeaturesCard p{
+    padding: 0 15px 15px 15px;
+}
+.Main__FeaturesCardPic img{
+    width: 100%;
+}
+
+/* Story/Promise */
+.Main__StoryBackground{
+    padding: 30px 0 30px 0;
+}
+.Main__StoryBackground>article{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.Main__Story{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.Main__StoryText{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+}
+.Main__StoryPic{
+    box-sizing: border-box;
+}
+.Main__StoryPic img{
+    width: 100%;
+    aspect-ratio: 3/4;
+    margin: auto;
+}
+@media screen and (max-width: 1199px) {
+    .Main__Story{
+        flex-direction: column-reverse;
+    }
+    .Main__StoryText>p:nth-child(2){
+        padding: 30px;
+    }
+    .Main__StoryPic img{
+        position: relative;
+        top: 0;
+        width: 50%;
+        padding-left: 25%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .Main__Story{
+        flex-direction: row;
+    }
+    .Main__StoryPic img{
+        position: relative;
+        top: 20%;
+    }
+}
+
+/* Products */
+.Main__ProductsBackground{
+    padding: 30px 0 30px 0;
+}
+.Main__ProductsBackground>article{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.Main__Products{
+    width: 80%;
+    margin: auto;
+}
+.Main__ProductsPrimary{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Main__ProductsText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.Main__ProductsSecondary{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 1199px) {
+    .Main__ProductsPrimary{
+        flex-direction: column-reverse;
+    }
+    .Main__ProductsText>p:nth-child(1){
+        padding-top: 30px;
+    }
+    .Main__ProductsText>p:nth-child(2){
+        padding: 30px;
+    }
+    .Main__ProductsPic img{
+        position: relative;
+        top: 0;
+        width: 50%;
+        padding-left: 25%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .Main__ProductsCard:hover{
+        cursor: pointer;
+    }
+    .Main__ProductsCardPic img:hover{
+	transform: scale(1.3);
+    }
+}
+.Main__ProductsCardPic{
+    overflow: hidden;
+}
+.Main__ProductsCardPic img{
+    width: 100%;
+    display: block;
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.Main__ProductsCard p:nth-child(2){
+    padding: 15px 0 15px 0;
+}
+.Main__ProductsCol{
+    padding: 10px;
+}
+.Main__ProductsLink{
+    width: 90%;
+    padding: 15px 0 15px 0;
+    text-align: right;
+}
+
+/* News */
+.Main__NewsBackground{
+    padding: 30px 0 30px 0;
+}
+.Main__NewsBackground>article{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.Main__News{
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid white;
+}
+.Main__NewsGrid{
+    display: grid;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid white;
+}
+.Main__NewsClick i{
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 50%;
+    width: 15px;
+    aspect-ratio: 1/1;
+}
+@media screen and (max-width: 767px) {
+    .Main__NewsGrid{
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 85% 15%;
+    }
+    .Main__NewsDate{
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    .Main__NewsHeadline{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        padding-top: 5px;
+    }
+    .Main__NewsClick{
+        grid-row: 1/span2;
+        grid-column: 2/3;
+        text-align: center;
+    }  
+}
+@media screen and (min-width: 768px) {
+    .Main__NewsGrid{
+        grid-template-rows: 100%;
+        grid-template-columns: 15% 70% 15%;
+    }
+    .Main__NewsDate{
+        grid-row: 1/2;
+        grid-column: 1 /2;
+    }
+    .Main__NewsHeadline{
+        grid-row: 1 / 2;
+        grid-column: 2 /3;
+    }
+    .Main__NewsClick{
+        grid-row: 1 / 2;
+        grid-column: 3 /4;
+        text-align: right;
+    }
+}
+.Main__NewsLink{
+    padding: 15px 0 15px 0;
+    text-align: right;
+}
+
+
+/* Shop */
+.Main__ShopBackground{
+    background-image: url('https://picsum.photos/800/600/?random=10');
+    background-repeat: no-repeat;
+    background-position: left;
+    aspect-ratio: 4/3;
+    position: relative;
+}
+.Main__ShopCard{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    background-color: #bebebe;
+    width: 30%;
+    aspect-ratio: 1/1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+@media screen and (max-width: 991px) {
+    .Main__ShopCard{
+        top: 40%;
+        width: 80%;
+        aspect-ratio: 3/1;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}
+
+
+/* Cooperate Companies */
+.Main__CooperateBackground{
+    padding: 30px 0 30px 0;
+    background-color: #fafafa;
+}
+.Main__CooperateBackground>article{
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+.Main__CooperateLogo{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Main__CooperateLogoCol{
+    box-sizing: border-box;
+    padding: 15px;
+}
+.Main__CooperateItem img{
+    width: 100%;
+}
+
+/* footer */
+footer{
+    width: 90%;
+    margin: auto;
+}
+.Sitemap{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0 30px 0;
+}
+.Sitemap a{
+    padding: 0 15px 0 0;
+}
+@media screen and (max-width: 767px) {
+    .Sitemap{
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0 30px 0;
+    }
+    .Moreinfo{
+        display: flex;
+        flex-direction: column;
+    }
+    .SocailMedia{
+        display: flex;
+        flex-direction: column;
+    }  
+    .Sitemap a{
+        width: fit-content;
+        padding: 30px 0 0 0;
+    }
+}
+

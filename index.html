@@ -4,336 +4,319 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/GS_Icon.ico" type="image/x-icon" >
     <title>研磨香料</title>
-    <link rel="stylesheet" href="./GrindingSpices.css">
+    <!-- CSS procedure: 
+    1. reset
+    2. link icon from Fontawesome
+    3. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
 </head>
 <body>
-    <!-- NavigateBar -->
-    <div class="MainNavi">
-        <div class="MainNavi__Logo">
-            <a href="./index.html">
-                <div class="LogoBar">
-                    <img src="./images/GS_Logo.png">
-                    <h1>研磨香料</h1>
-                </div>
-            </a>    
-        </div>
-        <div class="MainNavi__Menu">
-            <ul>
-                <li><a href="./CustomRecipe.html"><button class="Primary Light">客製香料</button> </a></li>
-                <li><a href="./PopularRecipePage.html">熱門食譜</a></li>
-                <li><a href="./ShopPage.html">來店選購</a></li>
-            </ul> 
-        </div>
-    </div>
+
+    <input type="checkbox" id="SwitchMenu">
     
-    <!-- MainPage Slogan -->
-    <div class="Background BgMain">
-        <!-- External Reference -->
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">1 / 3</div> -->
-              <img src="./images/Main__BgPic01.jpg" style="width:100%">
-              <!-- <div class="text">Caption Text</div> -->
-            </div>
+    <div class="Header">
+        <!-- <div class="Navigator">
             
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">2 / 3</div> -->
-              <img src="./images/Main__BgPic02.jpg" style="width:100%">
-              <!-- <div class="text">Caption Two</div> -->
-            </div>
+        </div> -->
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+        <div class="Logo">
+            (LOGO)
+            <img src="https://picsum.photos/100/50/?random=10">
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
             
-            <div class="mySlides fade">
-              <!-- <div class="numbertext">3 / 3</div> -->
-              <img src="./images/Main__BgPic03.jpg" style="width:100%">
-              <!-- <div class="text">Caption Three</div> -->
-            </div>
             
         </div>
-            <br>
-            
-        <div class="dot_indicator" style="text-align:center">
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-            <span class="dot"></span> 
-        </div>
-            
-        <script>
-            let slideIndex = 0;
-            showSlides();
-            
-            function showSlides() {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("dot");
-                for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {slideIndex = 1}    
-                for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex-1].style.display = "block";  
-                dots[slideIndex-1].className += " active";
-                setTimeout(showSlides, 3500); // Change image every 2 seconds
+    </div>
+
+    <!--  Hamburger menu resume -->
+    <script>  
+        // 3/3 事件處理: 若螢幕重置後 寬度大於1200, 且checkbox被勾選
+        // 則取消checkbox勾選
+        function CancelChecked(){
+            if (document.body.clientWidth>1200 && document.getElementById("SwitchMenu").checked==true){
+                // SwitchMenu改成checkbox id
+                document.getElementById("SwitchMenu").checked=false;
             }
-        </script>
-        <!-- External Reference -->
+        }
 
-        <div class="Main__Slogan">
-            <p class="Subtitle Light TextShadowDark">不再為死版味道煩惱，組建專屬香料組合</p>
+        // 2/3 觸發: 螢幕寬度改變
+        function ScreenResize(){
+            window.addEventListener("resize", CancelChecked, false);
+        }
+
+        // 1/3 頁面讀取完成後 載入事件驅動程式
+        window.addEventListener("load", ScreenResize, false);
+    </script>
+    
+    <!-- Banner -->
+    <div class="Background Main__BannerBackground">
+        <img src="https://picsum.photos/300/100/?random=10">
+        <div class="Main__Content">
+            <div class="Main__Slogan">
+                <p>系列激情武器可以說當年家人教學沒想到結果十二體會一大本文組合。</p>
+                <p>系列激情武器可以說當年家人教學沒想到結果十二體會一大本文組合。</p>
+            </div>
+            <div class="Main__GalleryShow">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </div>
         </div>
-      
     </div>
 
-    <!-- Customerize Recipe -->
-    <div class="Background BgCusRecipe">
-        
-        <div class="Content ContentCusRecipe">
-            <div class="CusRecipe__Row">
-                <div class="CusRecipe__Jigsaw">
-                    <div class="JigsawBottom">
-                        <img src="./images/Jigsaw_static.png" alt="">
+    <!-- About us -->
+    <section class="Background Main__AboutUsBackground">
+         <div class="Content Main__AboutUsContent">
+            <article class="Main__AboutUsArticle">About us</article>
+            <div class="Main__AboutUsCard">
+                <h2>SLOGAN SLOGAN</h2>
+                <p>系列激情武器可以說當年家人教學沒想到結果十二體會一大本文組合。</p>
+                <br>
+                <p>系列激情武器可以說當年家人教學沒想到結果十二體會一大本文組合。</p>
+            </div>
+         </div>
+    </section>
+
+    <!-- SlideShow -->
+    <section class="Background">
+            <div class="Main__SlideShow"></div>
+    </section>
+
+    <!-- Features -->
+    <section class="Background Main__FeaturesBackground">
+        <article>Features</article>
+        <div class="Main__Features">
+            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                <div class="Main__FeaturesCard">
+                    <p class="Main__FeaturesCard_Label">1</p>
+                    <div class="Main__FeaturesCardPic">
+                    <img src="https://picsum.photos/300/200/?random=10">
                     </div>
+                    <h3>Features</h3>
+                    <p>我把之間幫我，簡單。</p>
                 </div>
             </div>
-            <div class="CusRecipe__Row CusRecipe__RowInfo">
-                <div class="CusRecipe__Col">
-                    <h2>客製化香料組合</h2>
-                </div>
-                <div class="CusRecipe__Col">
-                    <div class="CusRecipe__ColText">
-                        <p class="RegularText ">我們為您篩選與檢驗每項食品原料，秉持謙和的心，終於食材原味，生產安心的產品。<br>
-                        建立由上游供應到下游賣售等垂直整合服務。同時延伸到電子商務。在積極發展下，我們能以更有競爭力的價格提供客戶更多元的選擇。<br>
-                        在不斷研發與嘗試下，我們能將過去無法拓展的商業模式落地實現，現在就透過我們的服務，組建屬於您自己的獨門配方</p>
+            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                <div class="Main__FeaturesCard">
+                    <p class="Main__FeaturesCard_Label">2</p>
+                    <div class="Main__FeaturesCardPic">
+                    <img src="https://picsum.photos/300/200/?random=10">
                     </div>
-                </div>
-                <div class="CusRecipe__Col">
-                    <a href="./CustomRecipe.html">
-                        <button class="Primary">建立香料組合</button>
-                    </a>
+                    <h3>Features</h3>
+                    <p>我把之間幫我，簡單。</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Popular Recipe -->
-    <div class="Background BgPopRecipe">
-        <div class="Content ContentPopRecipe">
-            <div class="PopRecipe_Row">
-                <h2>熱門食譜</h2>
-                <p class="Subtitle Dark">令人驚豔的料理<br>
-                    就缺香料臨門一腳</p>
-                <p class="RegularText Dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet provident rem earum, ut esse ad unde architecto ex pariatur iusto cumque maiores facilis illo nemo ullam eum delectus dolore? Laborum, aperiam repudiandae est voluptas veritatis quos blanditiis excepturi perferendis. Ullam totam nulla laudantium quisquam odit ipsum blanditiis optio non quod.</p>
-                <a href="./PopularRecipePage.html">
-                    <button class="Primary Light">瀏覽各類食譜</button>
-                </a>
-            </div>
-            <div class="PopRecipe_Row">
-                <div class="PopRecipe__Card">
-                    <img src="./images/PopRecipe__Seasoning.jpg">
-                    <div class="PopRecipe__CardText">
-                        <p class="Subtitle">肉類醃漬</p>
-                        <p class="RegularText"><br>職位打開同一怪物技能福建需求革命生成關鍵字取得，後果本來，而在情感你說抓住我還回到存儲抓住成立。</p>
+            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                <div class="Main__FeaturesCard">
+                    <p class="Main__FeaturesCard_Label">3</p>
+                    <div class="Main__FeaturesCardPic">
+                    <img src="https://picsum.photos/300/200/?random=10">
                     </div>
+                    <h3>Features</h3>
+                    <p>我把之間幫我，簡單。</p>
                 </div>
-                <div class="PopRecipe__Card">
-                    <img src="./images/PopRecipe__BBQ.jpg">
-                    <div class="PopRecipe__CardText">
-                        <p class="Subtitle">燒烤/炸物</p>
-                        <p class="RegularText"><br>職位打開同一怪物技能福建需求革命生成關鍵字取得，後果本來，而在情感你說抓住我還回到存儲抓住成立。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story/Promise -->
+    <section class="Background Main__StoryBackground">
+        <article>Story/Promise</article>
+        <div class="Main__Story"> <!-- row -->
+            <div class="Main__StoryText col-md-12 col-lg-12 col-xl-6">
+                <p>以美味和美麗為目標</p>
+                <p>FruOats 的發展始於“我不想忍受零食”。為了兼顧健康和美味，我們在不使用常用材料的情況下，重複了幾十次試驗和錯誤。</p>
+                <button>AAAA</button>
+            </div>
+            <div class="Main__StoryPic col-md-12 col-lg-12 col-xl-6">
+                <img src="https://picsum.photos/300/400/?random=10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="Background Main__ProductsBackground">
+        <article>Products</article>
+        <div class="Main__Products Main__ProductsPrimary"> <!-- row -->
+            <div class="Main__ProductsText col-md-12 col-lg-12 col-xl-6">
+                <p>以美味和美麗為目標</p>
+                <p>FruOats 的發展始於“我不想忍受零食”。為了兼顧健康和美味，我們在不使用常用材料的情況下，重複了幾十次試驗和錯誤。</p>
+                <button>AAAA</button>
+            </div>
+            <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
+                <img src="https://picsum.photos/300/400/?random=12">
+            </div>
+        </div>
+        <div class="Main__Products Main__ProductsSecondary"> <!-- row -->
+            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCardPic">
+                        <img src="https://picsum.photos/300/200/?random=10">
                     </div>
+                    <p>Product Name</p>
+                    <p>Price</p>
                 </div>
-                <div class="PopRecipe__Card">
-                    <img src="./images/PopRecipe__Stew.jpg">
-                    <div class="PopRecipe__CardText">
-                        <p class="Subtitle">慢火燉煮</p>
-                        <p class="RegularText"><br>職位打開同一怪物技能福建需求革命生成關鍵字取得，後果本來，而在情感你說抓住我還回到存儲抓住成立。</p>
+            </div>
+            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCardPic">
+                        <img src="https://picsum.photos/300/200/?random=10">
                     </div>
+                    <p>Product Name</p>
+                    <p>Price</p>
+                </div>
+            </div>
+            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCardPic">
+                        <img src="https://picsum.photos/300/200/?random=10">
+                    </div>
+                    <p>Product Name</p>
+                    <p>Price</p>
+                </div>
+            </div>
+            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCardPic">
+                        <img src="https://picsum.photos/300/200/?random=10">
+                    </div>
+                    <p>Product Name</p>
+                    <p>Price</p>
+                </div>
+            </div>
+            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCardPic">
+                        <img src="https://picsum.photos/300/200/?random=10">
+                    </div>
+                    <p>Product Name</p>
+                    <p>Price</p>
                 </div>
             </div>
         </div>
-    </div>
-
-<!-- 來店選購標題 -->
-<div class="Background BgShopPage">
-    <div class="Content">
-        <div class="ShopPage">
-            <h2>來店選購</h2>
-            <p class="Subtitle Dark">分店特惠商品以門市標示為準</p>
+        <div class="Main__ProductsLink"> <!-- row -->
+            <a href="#">View All Products</a>
         </div>
-    </div>
-</div>
+    </section>
 
-<!-- 台中店 -->
-<div class="Background BgShopPage1">
-    <div class="Content ContentShopPage">
-       <div class="ShopPage__Col ShopPage__Col2">
-           <h3 class="Dark TextShadowLight">台中店</h3>
-           <p class="Dark TextShadowLight TextBold">新上架</p>
-       </div>
-       <div class="ShopPage__Col ShopPage__Co1">
-           <div class="ShopPage__Card">
-               <div class="ShopPage__CardPic">
-                   <img src="./images/Good_1.jpg">
-               </div>
-               <p class="Subtitle Light">佳節禮盒</p>
-               <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
-           </div>
-       </div>
-       <div class="ShopPage__Col ShopPage__Co2">
-        <div class="ShopPage__Card">
-            <div class="ShopPage__CardPic">
-                <img src="./images/Good_2.jpg">
+    <!-- News -->
+    <section class="Background Main__NewsBackground">
+        <article>News</article>
+        <div class="Main__News">
+            <div class="Main__NewsGrid Main__News20220230">
+                <div class="Main__NewsDate">2022.02.30</div>
+                <div class="Main__NewsHeadline">headline</div>
+                <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
             </div>
-            <p class="Subtitle Light">佳節禮盒</p>
-            <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
-        </div>
-       </div>
-       <div class="ShopPage__Col ShopPage__Co3">
-        <div class="ShopPage__Card">
-            <div class="ShopPage__CardPic">
-                <img src="./images/Good_3.jpg">
+            <div class="Main__NewsGrid Main__News20220120">
+                <div class="Main__NewsDate">2022.01.20</div>
+                <div class="Main__NewsHeadline">headline</div>
+                <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
             </div>
-            <p class="Subtitle Light">佳節禮盒</p>
-            <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
-        </div>
-       </div>
-    </div>
-</div>
-
-<!-- 台南店 -->
-<div class="Background BgShopPage2">
-    <div class="Content ContentShopPage ContentShopPageTN">
-    <div class="ShopPage__Col ShopPage__Col2">
-        <h3 class="Dark TextShadowLight">台南店</h3>
-        <p class="Dark TextShadowLight TextBold">新上架</p>
-    </div>
-    <div class="ShopPage__Col ShopPage__Co1">
-        <div class="ShopPage__Card">
-            <div class="ShopPage__CardPic">
-                <img src="./images/Good_4.jpg">
+            <div class="Main__NewsGrid Main__News20211115">
+                <div class="Main__NewsDate">2021.11.15</div>
+                <div class="Main__NewsHeadline">headline</div>
+                <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
             </div>
-            <p class="Subtitle Light">佳節禮盒</p>
-            <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
-        </div>
-    </div>
-    <div class="ShopPage__Col ShopPage__Co2">
-        <div class="ShopPage__Card">
-            <div class="ShopPage__CardPic">
-                <img src="./images/Good_5.jpg">
+            <div class="Main__NewsLink">
+                <a href="#">View All News</a>
             </div>
-            <p class="Subtitle Light">佳節禮盒</p>
-            <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
         </div>
-    </div>
-    <div class="ShopPage__Col ShopPage__Co3">
-        <div class="ShopPage__Card">
-            <div class="ShopPage__CardPic">
-                <img src="./images/Good_6.jpg">
-            </div>
-            <p class="Subtitle Light">佳節禮盒</p>
-            <p class="RegularText Dark">ipsum, dolor sit amet consectetur adipisicing elit. Fugit, culpa.</p>
+    </section>
+
+    <!-- Shop/Factory -->
+    <section class="Background Main__ShopBackground">
+        <div class="Main__ShopCard">
+            <article>Shop/Factory</article>
+            <p>Company Name</p>
+            <p>Open hour</p>
+            <p>Location</p>
+            <p>Tel</p>
+            <button>Click</button>
         </div>
-    </div>
-    </div>
-</div>
+    </section>
 
-
-<div class="Background BgQualityAssure">
-    <div class="Content ContentQualityAssure">
-        <div class="QualityAssure">
-            <h2>品質管控</h2>
-            <p class="Subtitle Dark ">我們致力建構可信賴的品質，生產與品管符合優良製造規範標準，並通過HACCP認證</p>
-        </div>
-    </div>
-</div>
-
-<!-- 品保內容 -->
-<div class="Background BgQualityAssure">
-    <div class="Content ContentQualityAssure ContentQualityAssureEquitment">
-        <div class="QualityAssure__Row">
-            <div class="QualityAssure__Col">
-                <div class="QualityAssure__ColPic">
-                    <img src="./images/QC_1.jpg">
+    <!-- Cooperate Companies -->
+    <section class="Background Main__CooperateBackground">
+        <article>Cooperate Companies</article>
+        <div class="Main__CooperateLogo"> <!-- row -->
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
                 </div>
             </div>
-            <div class="QualityAssure__Col">
-                <h3>生產設備</h3>
-                <span></span>
-                <p class="RegularText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ipsam fugiat reiciendis nemo obcaecati architecto. Rem autem earum harum! Esse!</p>
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
+                </div>
+            </div>
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
+                </div>
+            </div>
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
+                </div>
+            </div>
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
+                </div>
+            </div>
+            <div class="Main__CooperateLogoCol col-xl-3 col-lg-4 col-md-6">
+                <div class="Main__CooperateItem">
+                    <img src="https://picsum.photos/200/50/?random=10">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="Content ContentQualityAssure ContentQualityAssureTraining">
-        <div class="QualityAssure__Row QualityAssure__RowReverse">
-            <div class="QualityAssure__Col QualityAssure__ColPicQuard">
-                <div class="QualityAssure__ColPic2 QualityAssure__ColPicShift">
-                    <img src="./images/QC_2.jpg">
+
+
+
+    <!-- Copyright Announcement -->
+    <section class="Background Main__CopyrightBackground">
+        <footer>
+            <div class="Sitemap">
+                <div class="Moreinfo">
+                    <a href="#">常見問題</a>
+                    <a href="#">商業合作</a>   
+                    <a href="#">服務條款</a>
+                    <a href="#">隱私政策</a>
                 </div>
-                <div class="QualityAssure__ColPic2 QualityAssure__ColPicNoneShift">
-                    <img src="./images/QC_3.jpg">
+                <div class="SocailMedia">
+                    <a href="#">聯繫我們<i class="fa-regular fa-envelope"></i></a>
+                    <a href="#">線上客服<i class="fa-regular fa-comment"></i></a>
                 </div>
-                <div class="QualityAssure__ColPic2 QualityAssure__ColPicNoneShift">
-                    <img src="./images/QC_4.jpg">
-                </div>
-                <div class="QualityAssure__ColPic2 QualityAssure__ColPicNoneShift">
-                    <img src="./images/QC_5.jpg">
-                </div>
+                          
             </div>
-            <div class="QualityAssure__Col">
-                <h3>人員培訓/在職教育訓練</h3>
-                <span></span>
-                <p class="RegularText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ipsam fugiat reiciendis nemo obcaecati architecto. Rem autem earum harum! Esse! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla fugit magni repudiandae atque repellat reprehenderit iure obcaecati impedit minima delectus.</p>
+
+            <div class="Main__Copyright">
+                <h2>版權聲明</h2>
+                <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
             </div>
-        </div>
-    </div>
-
-    <div class="Content ContentQualityAssureBooking">
-        <div class="QualityAssure__Row">
-            <div class="QualityAssure__Col">
-                <div class="Booking__Form">
-                    <form action="" method="post">
-                        <h3>登記參觀</h3>
-                        <p>姓名</p>
-                        <input type="text" name="name" placeholder="請輸入姓名">
-                        <p>聯繫電話</p>
-                        <input type="tel" name="name" placeholder="請輸入電話">
-                        <p>日期</p>
-                        <input type="date">
-                        <p>人數</p>
-                        <select>
-                            <option>1~5人</option>
-                            <option>6~10人</option>
-                            <option>10人以上</option>
-                        </select>
-                        <p><input type="submit" value="送出資料"></p>
-                    </form>
-                </div>
-            </div>
-            <div class="QualityAssure__Col">
-                <p class="Subtitle Dark TextBold">廠區參觀</p>
-                <span></span>
-                <p class="RegularText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum animi et quos dolores dolorem veritatis quasi exercitationem sit optio illo. Tempora assumenda dicta molestiae asperiores error aspernatur quia velit adipisci consectetur iure culpa, maiores molestias tempore architecto neque provident animi accusamus! Quaerat, id minima. Error ullam natus praesentium minus neque.</p>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<!-- Footer -->
-<div class="Background BgFooter">
-    <div class="Content ContentFooter">
-        <div class="Footer">
-            <h2>版權聲明</h2>
-            <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
-        </div>
-    </div>
-</div>
-
-
+        </footer>
+    </section>
+    
 </body>
 </html>
