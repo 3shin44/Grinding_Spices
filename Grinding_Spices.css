@@ -1,7 +1,7 @@
 /* Golbal setting */
 html, body{
     background-color: #fb957c;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-family:Noto Sans TC,Noto Sans;
 }
 *{
@@ -42,34 +42,40 @@ li{
     background-color: #faf0eb;
 }
 .TitleText_1{
-    font-size: 32 px;
+    font-size: 32px;
 }
 .TitleText_2{
-    font-size: 30 px;
+    font-size: 30px;
 }
 .TitleText_3{
-    font-size: 28 px;
+    font-size: 28px;
 }
 .ContentText_1{
-    font-size: 20 px;
+    font-size: 20px;
 }
 .ContentText_2{
-    font-size: 18 px;
+    font-size: 18px;
 }
 .ContentText_3{
-    font-size: 16 px;
+    font-size: 16px;
 }
 .NoteText_1{
-    font-size: 14 px;
+    font-size: 15px;
 }
 .NoteText_2{
-    font-size: 12 px;
+    font-size: 12px;
 }
 .TextRegular{
     font-weight: normal;
 }
 .TextBold{
     font-weight: bold;
+}
+.BoxShadow_1{
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+}
+.TextShadow_1{
+    text-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
 }
 
 
@@ -374,7 +380,7 @@ li{
 }
 .Main__SlideShow_Slider>ul{
     display: flex;
-    width: 120%;
+    width: 150%;
     animation-name: CSS_Carousel;
     animation-duration: 15s;
     animation-iteration-count: infinite;
@@ -409,14 +415,14 @@ li{
     box-sizing: border-box;
 }
 .Main__FeaturesCard{
-    background-color: wheat;
     position: relative;
 }
 .Main__FeaturesCard_Label{
     position: absolute;
-    top: -10px;
-    font-size: 22px;
+    top: -20px;
+    left: 10px;
 }
+
 .Main__FeaturesCard h3{
     padding: 15px;
 }
@@ -430,6 +436,9 @@ li{
 /* Story/Promise */
 .Main__StoryBackground{
     padding: 30px 0 30px 0;
+    background-image: url('./images/Main__StoryBcg.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
 }
 .Main__StoryBackground>article{
     text-align: center;
@@ -443,39 +452,46 @@ li{
     flex-wrap: wrap;
 }
 .Main__StoryText{
-    padding: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    box-sizing: border-box;
+    align-items: flex-start;
 }
-.Main__StoryPic{
-    box-sizing: border-box;
-    padding: 30px;
+.Main__StoryText p{
+    padding-bottom: 30px;
 }
 .Main__StoryPic img{
     width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 370/460;
     margin: auto;
+    border-radius: 10px;
 }
 @media screen and (max-width: 1199px) {
+    .Main__StoryBackground{
+        background-size: cover;
+    }
     .Main__Story{
         flex-direction: column-reverse;
     }
-    .Main__StoryText>p:nth-child(2){
-        padding: 30px;
+    .Main__StoryText{
+       padding-top: 15px;
+       width: 50%;
+       margin: auto;
+       align-items: center;
     }
     .Main__StoryPic img{
         position: relative;
         top: 0;
+        left: 50%;
         width: 50%;
-        padding-left: 25%;
+        transform: translateX(-50%);
     }
 }
 @media screen and (min-width: 1200px) {
     .Main__Story{
         flex-direction: row;
+    }
+    .Main__StoryText{
+        padding: 100px 20% 0 30px;
     }
     .Main__StoryPic img{
         position: relative;
@@ -632,18 +648,16 @@ li{
 
 /* Shop */
 .Main__ShopBackground{
-    background-image: url('https://picsum.photos/800/600/?random=10');
-    background-repeat: no-repeat;
-    background-position: left;
-    aspect-ratio: 4/3;
     position: relative;
+}
+.Main__ShopBackground img{
+    max-width: 70%;
 }
 .Main__ShopCard{
     position: absolute;
     top: 50%;
     right: 10%;
     transform: translateY(-50%);
-    background-color: #bebebe;
     width: 30%;
     aspect-ratio: 1/1;
     padding: 30px;
@@ -653,8 +667,13 @@ li{
     align-items: flex-start;
 }
 @media screen and (max-width: 991px) {
+    .Main__ShopBackground img{
+        max-width: 70%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
     .Main__ShopCard{
-        top: 40%;
+        top: 70%;
         width: 80%;
         aspect-ratio: 3/1;
         left: 0;
@@ -666,6 +685,7 @@ li{
 
 /* Cooperate Companies */
 .Main__CooperateBackground{
+    margin-top: 30px;
     padding: 30px 0 30px 0;
     background-color: #fafafa;
 }
@@ -679,10 +699,12 @@ li{
 }
 .Main__CooperateLogoCol{
     box-sizing: border-box;
-    padding: 15px;
+    padding: 30px;
 }
 .Main__CooperateItem img{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
 /* footer */
