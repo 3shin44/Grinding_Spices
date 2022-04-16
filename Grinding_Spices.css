@@ -4,6 +4,11 @@ html, body{
     letter-spacing: 1px;
     font-family:Noto Sans TC,Noto Sans;
 }
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 a{
     text-decoration: none;
 }
@@ -27,12 +32,47 @@ li{
 .SecondFontColor{
     color: #ec6d4e;
 }
+.NoteFontColor{
+    color: #898989;
+}
 .MainBcgColor{
     background-color: #fb957c;
 }
 .SecondBcgColor{
     background-color: #faf0eb;
 }
+.TitleText_1{
+    font-size: 32 px;
+}
+.TitleText_2{
+    font-size: 30 px;
+}
+.TitleText_3{
+    font-size: 28 px;
+}
+.ContentText_1{
+    font-size: 20 px;
+}
+.ContentText_2{
+    font-size: 18 px;
+}
+.ContentText_3{
+    font-size: 16 px;
+}
+.NoteText_1{
+    font-size: 14 px;
+}
+.NoteText_2{
+    font-size: 12 px;
+}
+.TextRegular{
+    font-weight: normal;
+}
+.TextBold{
+    font-weight: bold;
+}
+
+
 
 /* Universal Breakpoint for columns */
 @media screen and (max-width:995px) {
@@ -79,18 +119,29 @@ li{
     .col-xl-11{ width: 91.666666%;}
     .col-xl-12{ width: 100%;}
 }
+/* Naigator bar */
+.Logo{
+    display: flex;
+    align-items: center;
+}
+.Logo img{
+    width: 60px;
+    height: 60px;
+}
 
 
 /* MainPage */
 
 .Header{
     height: 100px;
-    background-color: rgba(179, 59, 4, 0.5);
+    background-color: #fb957c;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10px 0 10px;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 5;
 }
 .Cart{
     background-color: aliceblue;
@@ -206,8 +257,9 @@ li{
 .Main__BannerBackground{
     position: relative;
 }
-.Main__BannerBackground>img{
+.Main__BannerBackground>p{
     position: absolute;
+    z-index: 2;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -225,13 +277,27 @@ li{
 .Main__Slogan p{
     writing-mode: vertical-rl;
 }
-.Main__GalleryShow{
+.Main__Carousel{
     width: 70%;
+    overflow: hidden;
 }
-.Main__GalleryShow img{
-    display: block;
-    aspect-ratio: 3/2;
-    width: 100%;
+.Main__CarouselSlider>ul{
+    display: flex;
+    align-items: center;
+    animation-name: CSS_Carousel;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes CSS_Carousel{
+    0% {transform: translate3d(0, 0, 0);}
+    100% {transform: translate3d(-50%, 0, 0);}  
+    /* 此處要設定-50%, 剛好跑到父層顯示窗一半處 */
+}
+
+.Main__CarouselSlider>ul>li{
+    margin-right:15px;
 }
 
 /* About Us */
@@ -250,18 +316,18 @@ li{
 }
 .Main__AboutUsCard{
     position: relative;
-
-    background-color: gray;
-    aspect-ratio: 1/1.2;
     display: flex;
     flex-direction: column;
     padding: 30px;
 }
+.Main__AboutUsCard>p{
+    margin-bottom: 20px;
+}
 
 @media screen and (max-width: 995px) {
     .Main__AboutUsContent{
-        background-image: url('https://picsum.photos/768/1024/?random=10');
-        aspect-ratio: 1/1.2;
+        background-image: url('./images/Main__AboutUs.jpg');
+        aspect-ratio: 1.5/1;
     }
     .Main__AboutUsCard{
         top : 10%;
@@ -271,10 +337,12 @@ li{
 }
 @media screen and (min-width: 996px) {
     .Main__AboutUsContent{
-        background-image: url('https://picsum.photos/1280/1024/?random=10');
+        background-image: url('./images/Main__AboutUs.jpg');
         aspect-ratio: 4/3;
     }
     .Main__AboutUsCard{
+        aspect-ratio: 1/1.2;
+        border-radius: 15px;
         top : 20%;
         width: 50%;
         margin: 0 0 0 0;
@@ -282,16 +350,41 @@ li{
 }
 @media screen and (min-width: 1200px) {
     .Main__AboutUsCard{
+        border-radius: 5px;
         top : 30%;
         width: 40%;
-        margin: 0 0 0 30px;
+        aspect-ratio: 1.5/1;
     }
 }
 
 /* SlideShow */
 .Main__SlideShow{
-    height: 100px;
-    background-color: green;
+    aspect-ratio: 3.84/1;
+    background-image: url('./images/Main__SliderShow.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    overflow: hidden;
+    position: relative;
+}
+.Main__SlideShow_Slider{
+    position: absolute;
+    transform: translateX(25%);
+    bottom: 0;
+}
+.Main__SlideShow_Slider>ul{
+    display: flex;
+    width: 120%;
+    animation-name: CSS_Carousel;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+}
+.Main__SlideShow_Slider>ul>li{
+    margin-right: 10px;
+    font-size: 30px;
+    color: #efefef;
 }
 
 /* Features */
