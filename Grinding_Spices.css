@@ -1,8 +1,9 @@
 /* Golbal setting */
 html, body{
     background-color: #fb957c;
-    letter-spacing: 2px;
     font-family:Noto Sans TC,Noto Sans;
+    line-height: 25px;
+    letter-spacing: 2px;
 }
 *{
     box-sizing: border-box;
@@ -74,8 +75,14 @@ li{
 .BoxShadow_1{
     box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
 }
+.BoxShadow_2{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
 .TextShadow_1{
-    text-shadow: rgba(0, 0, 0, 0.7) 0px 4px 12px;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.3);
+}
+.TextShadow_2{
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
 }
 
 
@@ -164,12 +171,12 @@ li{
 .Hamburger{
     position: relative;
     border: 2px solid white;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 5px;
 }
 .Hamburger span{
-    width: 36px;
+    width: 30px;
     height: 2px;
     left: 0;
     right: 0;
@@ -178,13 +185,13 @@ li{
     position: absolute;
 }
 .Hamburger span:first-child{
-    top: 9px;
+    top: 7px;
 }
 .Hamburger span:nth-child(2){
-    top: 19px;
+    top: 16px;
 }
 .Hamburger span:last-child{
-    top: 29px;
+    bottom: 11px;
 }
 
 #SwitchMenu{
@@ -194,7 +201,7 @@ li{
     z-index: 5;
 }
 #SwitchMenu:checked ~ .Header .Hamburger span:first-child{
-    top: 19px;
+    top: 16px;
     transform: rotate(45deg);
     transition: top .3s, transform .3s .3s;
 }
@@ -203,13 +210,13 @@ li{
     transition: left .3s, opacity .3s, transform .3s .3s;
 }
 #SwitchMenu:checked ~ .Header .Hamburger span:last-child{
-    top: 19px;
+    top: 16px;
     transform: rotate(-45deg);
     transition: top .3s, transform .3s .3s;
 }
 
 #SwitchMenu ~ .Header .Hamburger span:first-child{
-    top: 9px;
+    top: 7px;
     transform: rotate(0deg);
     transition: transform .3s, top .3s .3s;
 }
@@ -219,7 +226,7 @@ li{
 }
 #SwitchMenu ~ .Header .Hamburger span:last-child{
     transform: rotate(0deg);
-    top: 29px;
+    top: 27px;
     transition: transform .3s, top .3s .3s;
 }
 #SwitchMenu:checked ~ .Header nav{
@@ -282,6 +289,7 @@ li{
 }
 .Main__Slogan p{
     writing-mode: vertical-rl;
+    line-height: 30px;
 }
 .Main__Carousel{
     width: 70%;
@@ -308,7 +316,7 @@ li{
 
 /* About Us */
 .Main__AboutUsBackground{
-    padding: 30px 0 30px 0;
+    padding: 30px;
 }
 .Main__AboutUsContent{
     position: relative;
@@ -322,21 +330,26 @@ li{
 }
 .Main__AboutUsCard{
     position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     padding: 30px;
+    border-radius: 15px;
 }
 .Main__AboutUsCard>p{
     margin-bottom: 20px;
 }
 
 @media screen and (max-width: 995px) {
+    .Main__AboutUsBackground{
+        padding: 30px 0 30px 0;
+    }
     .Main__AboutUsContent{
         background-image: url('./images/Main__AboutUs.jpg');
         aspect-ratio: 1.5/1;
     }
     .Main__AboutUsCard{
-        top : 10%;
+        top : 40%;
         width: 80%;
         margin: auto;
     }
@@ -347,11 +360,9 @@ li{
         aspect-ratio: 4/3;
     }
     .Main__AboutUsCard{
-        aspect-ratio: 1/1.2;
-        border-radius: 15px;
-        top : 20%;
+        top : 15%;
         width: 50%;
-        margin: 0 0 0 0;
+        left: -30px;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -359,7 +370,6 @@ li{
         border-radius: 5px;
         top : 30%;
         width: 40%;
-        aspect-ratio: 1.5/1;
     }
 }
 
@@ -513,7 +523,6 @@ li{
 }
 .Main__ProductsPrimary{
     display: flex;
-    flex-direction: row-reverse;
 }
 .Main__ProductsText{
     display: flex;
@@ -521,14 +530,29 @@ li{
     justify-content: space-evenly;
     align-items: center;
 }
+.Main__ProductsPic img{
+    width: 100%;
+    aspect-ratio: 75/100;
+    border-radius: 10px;
+    display: block;
+}
 .Main__ProductsSecondary{
-    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding-top: 30px;
 }
+.Main__ProductsCard p:last-child{
+    margin-bottom: 15px;
+}
+.Main__ProductsCardPic img{
+    border-radius: 10px;
+}
 @media screen and (max-width: 1199px) {
+    .Main__ProductsPic{
+        width: 70%;
+        margin: auto;
+    }
     .Main__ProductsPrimary{
         flex-direction: column-reverse;
     }
@@ -541,11 +565,21 @@ li{
 
 }
 @media screen and (min-width: 1200px) {
-    .Main__ProductsPic img{
-        position: relative;
-        top: 0;
+    .Main__ProductsPrimary{
+        flex-direction: row-reverse;
+    }
+    .Main__ProductsText{
         width: 50%;
-        padding-left: 25%;
+        padding: 0 10% 0 10%;
+    }
+    .Main__ProductsPic{
+        width: 50%;
+    }
+    .Main__ProductsPic img{
+        width: 100%;
+        aspect-ratio: 75/100;
+        border-radius: 10px;
+        display: block;
     }
     .Main__ProductsCard:hover{
         cursor: pointer;
@@ -564,7 +598,7 @@ li{
 	transition: .3s ease-in-out;
 }
 .Main__ProductsCard p:nth-child(2){
-    padding: 15px 0 15px 0;
+    padding: 5px 0 5px 0;
 }
 .Main__ProductsCol{
     padding: 10px;
