@@ -88,7 +88,7 @@
         <h2 class="TitleText_3 SecondFontColor">關於 研磨香料</h2>
         <section>
             <div class="Content Main__AboutUsContent">
-                <div class="Main__AboutUsCard SecondBcgColor">
+                <div class="Main__AboutUsCard SecondBcgColor Ani_Reveal">
                     <p class="ContentText_1 TextBold SecondFontColor">想在家展現廚藝 但總是缺一味香料</p>
                     <br>
                     <p class="NoteText_1 SecondFontColor">但總有一兩個香料找不到</p>
@@ -136,7 +136,7 @@
     <article  class="Main__ArticleFeatures Background">
         <h2 class="TitleText_3 MainFontColor">品質承諾</h2>
         <section class="Background Main__FeaturesBackground">
-            <div class="Main__Features">
+            <div class="Main__Features Ani_Reveal">
                 <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
                     <div class="Main__FeaturesCard SecondBcgColor">
                         <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">1</p>
@@ -198,10 +198,14 @@
                     <p class="MainFontColor ContentText_1 TextBold">追求美味與價格的平衡點</p>
                     <p class="MainFontColor ContentText_2">隨著電子商務與物流網路成熟，我們能將更多優質產品直接送到您手上</p>
                     <p class="MainFontColor ContentText_3">論壇四個僅僅各級阿宅人民共和國，手裡社區是這樣加拿大灌水為你當初驅動按照，積極導航，提出了總算今年，怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實，新聞發佈既然戰鬥以下該公司上述都是湖口追求加上領導你的會議，到我財政浪費會不會，現代化你自己街。</p>
-                    <button class="BtnType_1">瀏覽商品</button>
+                    <button class="BtnType_1 Ani_Reveal">瀏覽商品</button>
                 </div>
                 <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
-                    <img src="./images/Main__Products_Pic.jpg">
+                    <div class="FoldFan">
+                        <div><img src="./images/FoldFan_1.jpg"></div>
+                        <div><img src="./images/FoldFan_2.jpg"></div>
+                        <div><img src="./images/FoldFan_3.jpg"></div>
+                      </div>
                 </div>
             </div>
             <div class="Main__Products Main__ProductsSecondary"> <!-- row -->
@@ -374,19 +378,37 @@
     </section>
   </footer>
 
-<script>
+    <script>
+        function ToDo(){
+            // find all clickable item
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            })
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
 
+    <script>
+        // To check the scroll position on page load
+        window.addEventListener('load', function(){
+            window.addEventListener("scroll", reveal);
 
-    function ToDo(){
-        // find all clickable item
-        let Logo = document.getElementsByClassName("Logo");
-        Logo[0].addEventListener('click', function(){
-            document.location = './index.html'
-        })
-    }
-
-    window.addEventListener('load', ToDo, false);
-</script>
+            function reveal() {
+                let reveals = document.querySelectorAll(".Ani_Reveal");
+                for (let i = 0; i < reveals.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = reveals[i].getBoundingClientRect().top;
+                    let elementVisible = -150;
+                    if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                    } else {
+                    reveals[i].classList.remove("active");
+                    }
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>

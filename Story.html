@@ -165,8 +165,6 @@
         </section>
 
     <script>
-
-
         function ToDo(){
             // find all clickable item
             let Logo = document.getElementsByClassName("Logo");
@@ -176,6 +174,27 @@
         }
     
         window.addEventListener('load', ToDo, false);
+    </script>
+
+    <script>
+        // To check the scroll position on page load
+        window.addEventListener('load', function(){
+            window.addEventListener("scroll", reveal);
+
+            function reveal() {
+                let reveals = document.querySelectorAll(".Ani_Reveal");
+                for (let i = 0; i < reveals.length; i++) {
+                    let windowHeight = window.innerHeight;
+                    let elementTop = reveals[i].getBoundingClientRect().top;
+                    let elementVisible = -150;
+                    if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                    } else {
+                    reveals[i].classList.remove("active");
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
