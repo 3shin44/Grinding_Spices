@@ -815,11 +815,20 @@ li{
 }
 @media screen and (max-width: 768px) {
     .Main__ArticleCompany{
-        margin-top: 450px;
+        margin-top: 300px;
     }
     .Main__CooperateItem img{
         width: 150px;
         height: 60px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .Main__ArticleCompany{
+        margin-top: 500px;
+    }
+    .Main__CooperateItem img{
+        width: 120px;
+        height: 48px;
     }
 }
 
