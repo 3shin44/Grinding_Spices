@@ -286,6 +286,19 @@ li{
 #SwitchMenu:checked ~ .HeaderBar nav{
     left: 0;
 }
+nav i{
+    margin-right: 10px;
+}
+.SocialMedia{
+    display: flex;
+    align-items: center;
+
+}
+
+.SocialMedia img{
+    width: 30px;
+    height: 30px;
+}
 
 @media screen and (max-width: 1199px) {
     .Hamburger{
@@ -304,18 +317,24 @@ li{
         display: flex;
         flex-direction: column;
         left: -100%;
-        transition: 1s;
-        background-color: #efefef;
+        transition: 0.8s;
+        background-color: #e76949;
     }
     nav a{
         padding: 20px;
+    }
+    nav span{
+        margin: auto;
+        width: 90%;
+        height: 1px;
+        background-color: rgba(240, 240, 240, 0.7);
     }
 }
 @media screen and (min-width: 1200px) {
     .Hamburger{
         display: none;
     }
-    .SmallLogin{
+    .SmallLogin, .SocialMedia{
         display: none;
     }
 }
