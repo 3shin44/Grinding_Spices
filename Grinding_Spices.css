@@ -144,8 +144,7 @@ li{
 
 
 /* MainPage */
-
-.Header{
+.HeaderBar{
     height: 100px;
     background-color: #fb957c;
     display: flex;
@@ -156,16 +155,31 @@ li{
     top: 0;
     z-index: 5;
 }
+.MemberCart{
+    display: flex;
+    align-items: center;
+}
+.DesktopLogin:hover{
+    transition: 0.5s;
+    color: #ec6d4e;
+}
 .Cart{
-    background-color: aliceblue;
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+    background-color: #fafafa;
     border-radius: 50%;
+    margin: 0 10px 0 15px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Cart i{
+    color: #ec6d4e;
 }
 .Cart:hover{
     background-color: #fcd7cd;
-    transition: 0.5s;
+    transition: 0.8s;
     cursor: pointer;
 }
 .Hamburger{
@@ -176,7 +190,7 @@ li{
     border-radius: 5px;
 }
 .Hamburger span{
-    width: 30px;
+    width: 28px;
     height: 2px;
     left: 0;
     right: 0;
@@ -185,51 +199,51 @@ li{
     position: absolute;
 }
 .Hamburger span:first-child{
-    top: 7px;
+    top: 6px;
 }
 .Hamburger span:nth-child(2){
-    top: 16px;
+    top: 15px;
 }
 .Hamburger span:last-child{
-    bottom: 11px;
+    top: 24px;
 }
 
 #SwitchMenu{
     position: absolute;
-    top: 50px;
-    left: 150px;
+    top: 0;
+    left: -150px;
     z-index: 5;
 }
-#SwitchMenu:checked ~ .Header .Hamburger span:first-child{
+#SwitchMenu:checked ~ header .Hamburger span:first-child{
     top: 16px;
     transform: rotate(45deg);
     transition: top .3s, transform .3s .3s;
 }
-#SwitchMenu:checked ~ .Header .Hamburger span:nth-child(2){
+#SwitchMenu:checked ~ header .Hamburger span:nth-child(2){
     opacity: 0;
     transition: left .3s, opacity .3s, transform .3s .3s;
 }
-#SwitchMenu:checked ~ .Header .Hamburger span:last-child{
+#SwitchMenu:checked ~ header .Hamburger span:last-child{
     top: 16px;
     transform: rotate(-45deg);
     transition: top .3s, transform .3s .3s;
 }
 
-#SwitchMenu ~ .Header .Hamburger span:first-child{
-    top: 7px;
+#SwitchMenu ~ header .Hamburger span:first-child{
+    top: 6px;
     transform: rotate(0deg);
     transition: transform .3s, top .3s .3s;
 }
-#SwitchMenu ~ .Header .Hamburger span:nth-child(2){
+#SwitchMenu ~ header .Hamburger span:nth-child(2){
     opacity: 1;
     transition: opacity 2s;
 }
-#SwitchMenu ~ .Header .Hamburger span:last-child{
+#SwitchMenu ~ header .Hamburger span:last-child{
     transform: rotate(0deg);
-    top: 27px;
+    top: 24px;
     transition: transform .3s, top .3s .3s;
 }
-#SwitchMenu:checked ~ .Header nav{
+#SwitchMenu:checked ~ header nav{
     left: 0;
 }
 
@@ -315,17 +329,17 @@ li{
 }
 
 /* About Us */
-.Main__AboutUsBackground{
-    padding: 30px;
-}
-.Main__AboutUsContent{
+
+.Main__ArticleAboutUs{
+    margin-top: 30px;
+    background-image: url('./images/Main__AboutUs.jpg');
     position: relative;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
 }
-.Main__AboutUsArticle{
-    padding: 30px;
+.Main__ArticleAboutUs h2{
+    padding-top: 30px;
     text-align: center;
 }
 .Main__AboutUsCard{
@@ -341,11 +355,10 @@ li{
 }
 
 @media screen and (max-width: 995px) {
-    .Main__AboutUsBackground{
+    .Main__ArticleAboutUs{
         padding: 30px 0 30px 0;
     }
     .Main__AboutUsContent{
-        background-image: url('./images/Main__AboutUs.jpg');
         aspect-ratio: 1.5/1;
     }
     .Main__AboutUsCard{
@@ -356,7 +369,6 @@ li{
 }
 @media screen and (min-width: 996px) {
     .Main__AboutUsContent{
-        background-image: url('./images/Main__AboutUs.jpg');
         aspect-ratio: 4/3;
     }
     .Main__AboutUsCard{
@@ -610,15 +622,15 @@ li{
 }
 
 /* News */
-.Main__NewsBackground{
-    padding: 30px 0 30px 0;
-}
-.Main__NewsBackground>article{
+.Main__ArticleNews{
     text-align: center;
     padding-bottom: 30px;
 }
+.Main__NewsBackground{
+    padding: 30px 0 30px 0;
+}
 .Main__News{
-    width: 90%;
+    width: 80%;
     margin: auto;
     border-top: 1px solid white;
 }
@@ -634,6 +646,9 @@ li{
     border-radius: 50%;
     width: 15px;
     aspect-ratio: 1/1;
+}
+.Main__NewsHeadline, .Main__NewsDate{
+    text-align: left;
 }
 @media screen and (max-width: 767px) {
     .Main__NewsGrid{
@@ -681,6 +696,7 @@ li{
 
 
 /* Shop */
+
 .Main__ShopBackground{
     position: relative;
 }
@@ -718,14 +734,11 @@ li{
 
 
 /* Cooperate Companies */
-.Main__CooperateBackground{
-    margin-top: 30px;
+.Main__ArticleCompany{
+    margin-top: 60px;
+    text-align: center;
     padding: 30px 0 30px 0;
     background-color: #fafafa;
-}
-.Main__CooperateBackground>article{
-    padding: 0 0 30px 0;
-    text-align: center;
 }
 .Main__CooperateLogo{
     display: flex;
@@ -738,7 +751,6 @@ li{
 .Main__CooperateItem img{
     width: 100%;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
 /* footer */
