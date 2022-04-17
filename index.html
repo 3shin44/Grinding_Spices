@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>研磨香料</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
     <!-- CSS procedure: 
     1. css reset
     2. link icon from Fontawesome
@@ -16,53 +17,32 @@
 <body>
 
     <input type="checkbox" id="SwitchMenu">
-    
-    <header>
-        <div class="HeaderBar">
-            <label class="Hamburger" for="SwitchMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav>
-                <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
-                <a href="#">熱銷商品</a>
-                <a href="./Story.html">關於我們</a>
-                <a href="#">最新消息</a>
-                <a href="#">門市/製造廠</a>
-            </nav>
-            <div class="Logo">
-                <img src="./images/GS_Logo.png">
-                <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
-            </div>
-            <div class="MemberCart">
-                <a href="#" class="DesktopLogin MainFontColor">Login</a>
-                <a href="">
-                    <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
-                </a>
-            </div>
+    <div class="HeaderBar">
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="#">熱銷商品</a>
+            <a href="./Story.html">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">門市/製造廠</a>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
         </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>
 
-    <!--  Hamburger menu resume -->
-    <script>  
-        // 3/3 事件處理: 若螢幕重置後 寬度大於1200, 且checkbox被勾選
-        // 則取消checkbox勾選
-        function CancelChecked(){
-            if (document.body.clientWidth>1200 && document.getElementById("SwitchMenu").checked==true){
-                // SwitchMenu改成checkbox id
-                document.getElementById("SwitchMenu").checked=false;
-            }
-        }
-
-        // 2/3 觸發: 螢幕寬度改變
-        function ScreenResize(){
-            window.addEventListener("resize", CancelChecked, false);
-        }
-
-        // 1/3 頁面讀取完成後 載入事件驅動程式
-        window.addEventListener("load", ScreenResize, false);
-    </script>
-    
+  <header>   
     <!-- Banner -->
         <div class="Background Main__BannerBackground">
             <p class="TitleText_1 MainFontColor TextBold TextShadow_1">Grinding Spices</p>
@@ -84,9 +64,9 @@
                 </div>
             </div>
         </div>
-    </header>  
+  </header>  
 
-    <main>
+  <main>
 
     <!-- About us -->
     <article class="Main__ArticleAboutUs Background">
@@ -107,6 +87,7 @@
             </div>
         </section>
     </article>
+
     <!-- SlideShow -->
     <section class="Background">
             <div class="Main__SlideShow">
@@ -137,129 +118,134 @@
     </section>
 
     <!-- Features -->
-    <section class="Background Main__FeaturesBackground">
-        <article class="MainFontColor TitleText_3">品質承諾</article>
-        <div class="Main__Features">
-            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
-                <div class="Main__FeaturesCard SecondBcgColor">
-                    <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">1</p>
-                    <div class="Main__FeaturesCardPic">
-                        <img src="./images/Main__Features_1.jpg">
+    <article  class="Main__ArticleFeatures Background">
+        <h2 class="TitleText_3 MainFontColor">品質承諾</h2>
+        <section class="Background Main__FeaturesBackground">
+            <div class="Main__Features">
+                <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                    <div class="Main__FeaturesCard SecondBcgColor">
+                        <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">1</p>
+                        <div class="Main__FeaturesCardPic">
+                            <img src="./images/Main__Features_1.jpg">
+                        </div>
+                        <p class="ContentText_3 SecondFontColor TextBold">來源管理</p>
+                        <p class="NoteText_2">不定期稽核供應廠商</p>
                     </div>
-                    <p class="ContentText_3 SecondFontColor TextBold">來源管理</p>
-                    <p class="NoteText_2">不定期稽核供應廠商</p>
+                </div>
+                <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                    <div class="Main__FeaturesCard SecondBcgColor">
+                        <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">2</p>
+                        <div class="Main__FeaturesCardPic">
+                            <img src="./images/Main__Features_2.jpg">
+                        </div>
+                        <p class="ContentText_3 SecondFontColor TextBold">化學/生物品管</p>
+                        <p class="NoteText_2">化學性/微生物類檢驗品管</p>
+                    </div>
+                </div>
+                <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
+                    <div class="Main__FeaturesCard SecondBcgColor">
+                        <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">3</p>
+                        <div class="Main__FeaturesCardPic">
+                            <img src="./images/Main__Features_3.jpg">
+                        </div>
+                        <p class="ContentText_3 SecondFontColor TextBold">製程中管理</p>
+                        <p class="NoteText_2">定期公布管理資訊</p>
+                    </div>
                 </div>
             </div>
-            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
-                <div class="Main__FeaturesCard SecondBcgColor">
-                    <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">2</p>
-                    <div class="Main__FeaturesCardPic">
-                        <img src="./images/Main__Features_2.jpg">
-                    </div>
-                    <p class="ContentText_3 SecondFontColor TextBold">化學/生物品管</p>
-                    <p class="NoteText_2">化學性/微生物類檢驗品管</p>
-                </div>
-            </div>
-            <div class="Main__FeaturesCol col-md-12 col-lg-6 col-xl-4">
-                <div class="Main__FeaturesCard SecondBcgColor">
-                    <p class="Main__FeaturesCard_Label MainFontColor TitleText_1 TextShadow_2 TextBold">3</p>
-                    <div class="Main__FeaturesCardPic">
-                        <img src="./images/Main__Features_3.jpg">
-                    </div>
-                    <p class="ContentText_3 SecondFontColor TextBold">製程中管理</p>
-                    <p class="NoteText_2">定期公布管理資訊</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </article>
 
     <!-- Story/Promise -->
-    <section class="Background Main__StoryBackground">
-        <article class="TitleText_3 MainFontColor">產品特色</article>
-        <div class="Main__Story"> <!-- row -->
-            <div class="Main__StoryText col-md-12 col-lg-12 col-xl-6">
-                <p class="ContentText_1 MainFontColor">追求美味與價格的平衡點</p>
-                <p class="ContentText_3 MainFontColor">每次只需要用一點點的香料，卻總找不到適合的販售規格，難得找到供應店家也要苦等多時才能到貨</p>
-                <button>AAAA</button>
+    <article class="Background Main__ArticleStory">
+        <h2 class="TitleText_3 MainFontColor">產品特色</h2>
+        <section> 
+            <div class="Main__Story"> <!-- row -->
+                <div class="Main__StoryText col-md-12 col-lg-12 col-xl-6">
+                    <p class="ContentText_1 MainFontColor">追求美味與價格的平衡點</p>
+                    <p class="ContentText_3 MainFontColor">每次只需要用一點點的香料，卻總找不到適合的販售規格，難得找到供應店家也要苦等多時才能到貨</p>
+                    <button class="BtnType_1">生產過程</button>
+                </div>
+                <div class="Main__StoryPic col-md-12 col-lg-12 col-xl-6">
+                    <img src="./images/Main__StoryPic.jpg">
+                </div>
             </div>
-            <div class="Main__StoryPic col-md-12 col-lg-12 col-xl-6">
-                <img src="./images/Main__StoryPic.jpg">
-            </div>
-        </div>
-    </section>
+        </section>
+    </article>
+
 
     <!-- Products -->
-    <section class="Background Main__ProductsBackground">
-        <article class="TitleText_3 MainFontColor">熱銷商品</article>
-        <div class="Main__Products Main__ProductsPrimary"> <!-- row -->
-            <div class="Main__ProductsText col-md-12 col-lg-12 col-xl-6">
-                <p class="MainFontColor ContentText_1 TextBold">追求美味與價格的平衡點</p>
-                <p class="MainFontColor ContentText_2">隨著電子商務與物流網路成熟，我們能將更多優質產品直接送到您手上</p>
-                <p class="MainFontColor ContentText_3">論壇四個僅僅各級阿宅人民共和國，手裡社區是這樣加拿大灌水為你當初驅動按照，積極導航，提出了總算今年，怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實，新聞發佈既然戰鬥以下該公司上述都是湖口追求加上領導你的會議，到我財政浪費會不會，現代化你自己街。</p>
-                
-
-                <button>AAAA</button>
-            </div>
-            <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
-                <img src="./images/Main__Products_Pic.jpg">
-            </div>
-        </div>
-        <div class="Main__Products Main__ProductsSecondary"> <!-- row -->
-            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                <div class="Main__ProductsCard">
-                    <div class="Main__ProductsCardPic">
-                        <img src="./images/Main__Products_1.jpg">
-                    </div>
-                    <p class="MainFontColor ContentText_3">薑黃粉</p>
-                    <p class="MainFontColor NoteText_1">$350 / 500g 罐</p>
+    <article class="Background Main__ArticleProducts">
+        <h2 class="TitleText_3 MainFontColor">熱銷商品</h2>
+        <section>
+            <div class="Main__Products Main__ProductsPrimary"> <!-- row -->
+                <div class="Main__ProductsText col-md-12 col-lg-12 col-xl-6">
+                    <p class="MainFontColor ContentText_1 TextBold">追求美味與價格的平衡點</p>
+                    <p class="MainFontColor ContentText_2">隨著電子商務與物流網路成熟，我們能將更多優質產品直接送到您手上</p>
+                    <p class="MainFontColor ContentText_3">論壇四個僅僅各級阿宅人民共和國，手裡社區是這樣加拿大灌水為你當初驅動按照，積極導航，提出了總算今年，怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實，新聞發佈既然戰鬥以下該公司上述都是湖口追求加上領導你的會議，到我財政浪費會不會，現代化你自己街。</p>
+                    <button class="BtnType_1">瀏覽商品</button>
+                </div>
+                <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
+                    <img src="./images/Main__Products_Pic.jpg">
                 </div>
             </div>
-            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                <div class="Main__ProductsCard">
-                    <div class="Main__ProductsCardPic">
-                        <img src="./images/Main__Products_2.jpg">
+            <div class="Main__Products Main__ProductsSecondary"> <!-- row -->
+                <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                    <div class="Main__ProductsCard">
+                        <div class="Main__ProductsCardPic">
+                            <img src="./images/Main__Products_1.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">薑黃粉</p>
+                        <p class="MainFontColor NoteText_1">$350 / 500g 罐</p>
                     </div>
-                    <p class="MainFontColor ContentText_3">黑胡椒粒</p>
-                    <p class="MainFontColor NoteText_1">$150 / 500g 罐</p>
+                </div>
+                <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                    <div class="Main__ProductsCard">
+                        <div class="Main__ProductsCardPic">
+                            <img src="./images/Main__Products_2.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">黑胡椒粒</p>
+                        <p class="MainFontColor NoteText_1">$150 / 500g 罐</p>
+                    </div>
+                </div>
+                <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                    <div class="Main__ProductsCard">
+                        <div class="Main__ProductsCardPic">
+                            <img src="./images/Main__Products_3.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">深焙茶葉蛋滷包</p>
+                        <p class="MainFontColor NoteText_1">$150 / 10 包</p>
+                    </div>
+                </div>
+                <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                    <div class="Main__ProductsCard">
+                        <div class="Main__ProductsCardPic">
+                            <img src="./images/Main__Products_4.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">南洋肉骨茶</p>
+                        <p class="MainFontColor NoteText_1">$550 / 5包</p>
+                    </div>
+                </div>
+                <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
+                    <div class="Main__ProductsCard">
+                        <div class="Main__ProductsCardPic">
+                            <img src="./images/Main__Products_5.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">泰式椒麻風味</p>
+                        <p class="MainFontColor NoteText_1">$350 / 300g*5包</p>
+                    </div>
                 </div>
             </div>
-            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                <div class="Main__ProductsCard">
-                    <div class="Main__ProductsCardPic">
-                        <img src="./images/Main__Products_3.jpg">
-                    </div>
-                    <p class="MainFontColor ContentText_3">深焙茶葉蛋滷包</p>
-                    <p class="MainFontColor NoteText_1">$150 / 10 包</p>
-                </div>
+            <div class="Main__ProductsLink"> <!-- row -->
+                <a href="#">瀏覽所有商品</a>
             </div>
-            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                <div class="Main__ProductsCard">
-                    <div class="Main__ProductsCardPic">
-                        <img src="./images/Main__Products_4.jpg">
-                    </div>
-                    <p class="MainFontColor ContentText_3">南洋肉骨茶</p>
-                    <p class="MainFontColor NoteText_1">$550 / 5包</p>
-                </div>
-            </div>
-            <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                <div class="Main__ProductsCard">
-                    <div class="Main__ProductsCardPic">
-                        <img src="./images/Main__Products_5.jpg">
-                    </div>
-                    <p class="MainFontColor ContentText_3">泰式椒麻風味</p>
-                    <p class="MainFontColor NoteText_1">$350 / 300g*5包</p>
-                </div>
-            </div>
-        </div>
-        <div class="Main__ProductsLink"> <!-- row -->
-            <a href="#">瀏覽所有商品</a>
-        </div>
-    </section>
+        </section>
+    </article>
 
     <!-- News -->
-    <article class="Main__ArticleNews">
+    <article class="Background Main__ArticleNews">
         <h2 class="TitleText_3 MainFontColor">最新消息</h2>
-        <section class="Background Main__NewsBackground">
+        <section>
             <div class="Main__News">
                 <div class="Main__NewsGrid Main__News20220111">
                     <div class="Main__NewsDate MainFontColor">2022.01.11</div>
@@ -284,26 +270,29 @@
     </article>
 
     <!-- Shop/Factory -->
-    <section class="Background Main__ShopBackground">
-        <img src="./images/Main__ShopBackground.jpg" alt="">
-        <div class="Main__ShopCard SecondBcgColor">
-            <article>門市/製造廠</article>
-            <br>
-            <p>地點</p>
-            <p>門市: 100台北市中正區濟南路一段321號</p>
-            <p>製造廠: 320桃園市中壢區復興路46號9樓</p>
-            <br>
-            <p>營業時間</p>
-            <p>門市: 二 ~ 六 08:30~17:30</p>
-            <p>製造廠: 一 ~ 五 08:30~17:30</p>
-            <br>
-            <p>連絡電話</p>
-            <p>門市: 0233221368</p>
-            <p>製造廠: 034251108</p>    
-            <br>      
-            <button>Click</button>
-        </div>
-    </section>
+    <article class="Background Main__ArticleShop">
+        <h2>門市/製造廠</h2>
+        <section class="Main__Shop">
+            <img src="./images/Main__ShopBackground.jpg" alt="">
+            <div class="Main__ShopCard SecondBcgColor">
+                <p class="ContentText_1 SecondFontColor TextBold">門市/製造廠</p>
+                <br>
+                <p class="ContentText_2 TextBold">地點</p>
+                <p>門市: 100台北市中正區濟南路一段321號</p>
+                <p>製造廠: 320桃園市中壢區復興路46號9樓</p>
+                <br>
+                <p class="ContentText_2 TextBold">營業時間</p>
+                <p>門市: 二 ~ 六 08:30~17:30</p>
+                <p>製造廠: 一 ~ 五 08:30~17:30</p>
+                <br>
+                <p class="ContentText_2 TextBold">連絡電話</p>
+                <p>門市: 02-33221368</p>
+                <p>製造廠: 03-4251108</p>    
+                <br>      
+                <button class="BtnType_2">瀏覽 門市/製造廠 資訊</button>
+            </div>
+        </section>
+    </article>
 
     <!-- Cooperate Companies -->
     <article class="Background Main__ArticleCompany">
@@ -346,7 +335,7 @@
       
   </main>
     <!-- Copyright Announcement -->
-    <footer>
+  <footer>
     <section class="Background Main__CopyrightBackground">
         
             <div class="Sitemap">
@@ -368,6 +357,21 @@
                 <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
             </div>
     </section>
-</footer>
+  </footer>
+
+<script>
+
+
+    function ToDo(){
+        // find all clickable item
+        let Logo = document.getElementsByClassName("Logo");
+        Logo[0].addEventListener('click', function(){
+            document.location = './index.html'
+        })
+    }
+
+    window.addEventListener('load', ToDo, false);
+</script>
+
 </body>
 </html>

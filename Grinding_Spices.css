@@ -12,6 +12,7 @@ html, body{
 }
 a{
     text-decoration: none;
+    color: #efefef;
 }
 li{
     list-style: none;
@@ -84,7 +85,43 @@ li{
 .TextShadow_2{
     text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
 }
+.BtnType_1{
+    width: 230px;
+    font-size: 18px;
+    text-align: center;
+    color: #fb957c;
+    font-weight: bold;
+    background-color: #faf0eb;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.BtnType_1:hover{
+    cursor: pointer;
+    color: #faf0eb;
+    background-color: #fb957c;
+    box-shadow: 0px 0px 0px 2px #faf0eb inset;
+}
 
+
+.BtnType_2{
+    width: 230px;
+    font-size: 18px;
+    text-align: center;
+    color: #fffaf8;
+    font-weight: bold;
+    background-color: #fb957c;
+    padding: 10px 0 10px 0;
+    border: none;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+.BtnType_2:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 2px #faf0eb inset, 
+    0px 4px 12px rgba(0, 0, 0, 0.5);
+}
 
 
 /* Universal Breakpoint for columns */
@@ -136,6 +173,9 @@ li{
 .Logo{
     display: flex;
     align-items: center;
+}
+.Logo:hover{
+    cursor: pointer;
 }
 .Logo img{
     width: 60px;
@@ -209,41 +249,41 @@ li{
 }
 
 #SwitchMenu{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -150px;
     z-index: 5;
 }
-#SwitchMenu:checked ~ header .Hamburger span:first-child{
+#SwitchMenu:checked ~ .HeaderBar .Hamburger span:first-child{
     top: 16px;
     transform: rotate(45deg);
     transition: top .3s, transform .3s .3s;
 }
-#SwitchMenu:checked ~ header .Hamburger span:nth-child(2){
+#SwitchMenu:checked ~ .HeaderBar .Hamburger span:nth-child(2){
     opacity: 0;
     transition: left .3s, opacity .3s, transform .3s .3s;
 }
-#SwitchMenu:checked ~ header .Hamburger span:last-child{
+#SwitchMenu:checked ~ .HeaderBar .Hamburger span:last-child{
     top: 16px;
     transform: rotate(-45deg);
     transition: top .3s, transform .3s .3s;
 }
 
-#SwitchMenu ~ header .Hamburger span:first-child{
+#SwitchMenu ~ .HeaderBar .Hamburger span:first-child{
     top: 6px;
     transform: rotate(0deg);
     transition: transform .3s, top .3s .3s;
 }
-#SwitchMenu ~ header .Hamburger span:nth-child(2){
+#SwitchMenu ~ .HeaderBar .Hamburger span:nth-child(2){
     opacity: 1;
     transition: opacity 2s;
 }
-#SwitchMenu ~ header .Hamburger span:last-child{
+#SwitchMenu ~ .HeaderBar .Hamburger span:last-child{
     transform: rotate(0deg);
     top: 24px;
     transition: transform .3s, top .3s .3s;
 }
-#SwitchMenu:checked ~ header nav{
+#SwitchMenu:checked ~ .HeaderBar nav{
     left: 0;
 }
 
@@ -329,7 +369,6 @@ li{
 }
 
 /* About Us */
-
 .Main__ArticleAboutUs{
     margin-top: 30px;
     background-image: url('./images/Main__AboutUs.jpg');
@@ -350,9 +389,6 @@ li{
     padding: 30px;
     border-radius: 15px;
 }
-.Main__AboutUsCard>p{
-    margin-bottom: 20px;
-}
 
 @media screen and (max-width: 995px) {
     .Main__ArticleAboutUs{
@@ -362,7 +398,7 @@ li{
         aspect-ratio: 1.5/1;
     }
     .Main__AboutUsCard{
-        top : 40%;
+        top : 30%;
         width: 80%;
         margin: auto;
     }
@@ -372,15 +408,15 @@ li{
         aspect-ratio: 4/3;
     }
     .Main__AboutUsCard{
-        top : 15%;
+        top : 30%;
         width: 50%;
-        left: -30px;
+        left: 0;
     }
 }
 @media screen and (min-width: 1200px) {
     .Main__AboutUsCard{
         border-radius: 5px;
-        top : 30%;
+        top : 40%;
         width: 40%;
     }
 }
@@ -398,7 +434,7 @@ li{
 .Main__SlideShow_Slider{
     position: absolute;
     transform: translateX(25%);
-    bottom: 0;
+    bottom: 10px;
 }
 .Main__SlideShow_Slider>ul{
     display: flex;
@@ -416,12 +452,12 @@ li{
 }
 
 /* Features */
-.Main__FeaturesBackground{
-    padding: 30px 0 30px 0;
+.Main__ArticleFeatures{
+    padding: 60px 0 30px 0;
 }
-.Main__FeaturesBackground>article{
-    padding-bottom: 30px;
+.Main__ArticleFeatures>h2{
     text-align: center;
+    padding-bottom: 30px;
 }
 .Main__Features{
     width: 80%;
@@ -434,35 +470,33 @@ li{
 
 .Main__FeaturesCol{
     padding: 15px;
-    box-sizing: border-box;
 }
 .Main__FeaturesCard{
     position: relative;
+    border-radius: 5px;
 }
 .Main__FeaturesCard_Label{
     position: absolute;
     top: -20px;
     left: 10px;
 }
-
-.Main__FeaturesCard h3{
-    padding: 15px;
-}
 .Main__FeaturesCard p{
     padding: 0 15px 15px 15px;
 }
 .Main__FeaturesCardPic img{
     width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 
 /* Story/Promise */
-.Main__StoryBackground{
+.Main__ArticleStory{
     padding: 30px 0 30px 0;
     background-image: url('./images/Main__StoryBcg.jpg');
     background-repeat: no-repeat;
     background-position: top center;
+    background-size: contain;
 }
-.Main__StoryBackground>article{
+.Main__ArticleStory>h2{
     text-align: center;
     padding-bottom: 30px;
 }
@@ -483,12 +517,12 @@ li{
 }
 .Main__StoryPic img{
     width: 100%;
-    aspect-ratio: 370/460;
+    aspect-ratio: 37/46;
     margin: auto;
     border-radius: 10px;
 }
 @media screen and (max-width: 1199px) {
-    .Main__StoryBackground{
+    .Main__ArticleStory{
         background-size: cover;
     }
     .Main__Story{
@@ -504,7 +538,7 @@ li{
         position: relative;
         top: 0;
         left: 50%;
-        width: 50%;
+        width: 70%;
         transform: translateX(-50%);
     }
 }
@@ -522,10 +556,10 @@ li{
 }
 
 /* Products */
-.Main__ProductsBackground{
+.Main__ArticleProducts{
     padding: 50px 0 30px 0;
 }
-.Main__ProductsBackground>article{
+.Main__ArticleProducts>h2{
     text-align: center;
     padding-bottom: 30px;
 }
@@ -568,11 +602,18 @@ li{
     .Main__ProductsPrimary{
         flex-direction: column-reverse;
     }
+    .Main__ProductsText p{
+        width: 70%;
+    }
     .Main__ProductsText>p:nth-child(1){
         padding-top: 30px;
+        text-align: center;
     }
     .Main__ProductsText>p:nth-child(2){
-        padding: 30px;
+        padding: 30px 0 30px 0;
+    }
+    .Main__ProductsText button{
+        margin-top: 30px;
     }
 
 }
@@ -597,7 +638,7 @@ li{
         cursor: pointer;
     }
     .Main__ProductsCardPic img:hover{
-	transform: scale(1.3);
+	transform: scale(1.2);
     }
 }
 .Main__ProductsCardPic{
@@ -623,6 +664,10 @@ li{
 
 /* News */
 .Main__ArticleNews{
+    text-align: center;
+    padding: 30px 0 30px 0;
+}
+.Main__ArticleNews>h2{
     text-align: center;
     padding-bottom: 30px;
 }
@@ -696,36 +741,41 @@ li{
 
 
 /* Shop */
-
-.Main__ShopBackground{
+.Main__ArticleShop{
     position: relative;
 }
-.Main__ShopBackground img{
-    max-width: 70%;
+.Main__ArticleShop>h2{
+    position: absolute;
+    left: -150px;
+}
+.Main__ArticleShop img{
+    width: 80%;
+    display: block;
+    border-radius: 5px;
 }
 .Main__ShopCard{
     position: absolute;
     top: 50%;
-    right: 10%;
     transform: translateY(-50%);
-    width: 30%;
-    aspect-ratio: 1/1;
+    right: 0;
     padding: 30px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
 }
+.Main__ShopCard button{
+    align-self: center;
+}
 @media screen and (max-width: 991px) {
-    .Main__ShopBackground img{
-        max-width: 70%;
-        margin-left: 50%;
-        transform: translateX(-50%);
+    .Main__ArticleShop img{
+        width: 100%;
     }
     .Main__ShopCard{
-        top: 70%;
+        top: 60%;
+        transform: translateY(0);
         width: 80%;
-        aspect-ratio: 3/1;
         left: 0;
         right: 0;
         margin: auto;
@@ -736,21 +786,41 @@ li{
 /* Cooperate Companies */
 .Main__ArticleCompany{
     margin-top: 60px;
-    text-align: center;
     padding: 30px 0 30px 0;
     background-color: #fafafa;
+}
+.Main__ArticleCompany>h2{
+    text-align: center;
 }
 .Main__CooperateLogo{
     display: flex;
     flex-wrap: wrap;
 }
 .Main__CooperateLogoCol{
-    box-sizing: border-box;
+    display: flex;
     padding: 30px;
+    justify-content: center;
+    align-items: center;
 }
 .Main__CooperateItem img{
-    width: 100%;
+    width: 250px;
+    height: 100px;
     border-radius: 10px;
+}
+
+@media screen and (max-width: 991px) {
+    .Main__ArticleCompany{
+        margin-top: 250px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .Main__ArticleCompany{
+        margin-top: 450px;
+    }
+    .Main__CooperateItem img{
+        width: 150px;
+        height: 60px;
+    }
 }
 
 /* footer */
