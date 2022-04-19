@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
+    <!-- CSS procedure: 
+    1. css reset
+    2. link icon from Fontawesome
+    3. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="SwitchMenu">
+    <div class="HeaderBar">
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="./Products.html">熱銷商品</a>
+            <a href="./Story.html">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">門市/製造廠</a>
+            <span></span>
+            <div class="SocialMedia">
+                <a href="https://twitter.com/">
+                    <img src="./images/SocialMedia_TWR.png" alt="">
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/SocialMedia_FB.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/">
+                    <img src="./images/SocialMedia_IG.png" alt="">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./images/SocialMedia_YT.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>
+
+    <div class="News__Content">
+        <article class="SecondBcgColor">
+            <h2 class="ContentText_1 SecondFontColor TextBold">國際食品與飲料展覽會 最佳便攜包裝獎</h2>
+            <p class="NewsDate NoteText_1 SecondFontColor">2022.01.11</p>
+            <section>
+                <div class="News__Pic">
+                    <img src="./images/News/2022_Award.jpg" alt="">
+                </div>
+                <p>國際食品與飲料展覽會 最佳便攜包裝獎</p>
+                <p class="NoteText_2">這時無聊他對還能吃螺絲推動三星，功夫魯雙手獲取陽明山，步驟調節尊重策略背景，判斷周邊監控需要論文退出套件招商中壢美元美元，新技術選單判斷優質告訴電視劇，電池作業一半其它放棄司機交換反覆對於它的更多。</p>
+                
+                
+                <div class="News__SocialMedia">
+                    <p class="SecondFontColor">SHARE</p>
+                    <div class="News__Icon News__FB">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="43.78px" viewBox="0 0 44 43.78" style="overflow:visible;enable-background:new 0 0 44 43.78;" xml:space="preserve"> <defs></defs><path d="M22,0C9.85,0,0,9.85,0,22c0,11.03,8.12,20.14,18.71,21.73v-15.9h-5.44v-5.78h5.44V18.2c0-6.37,3.1-9.17,8.4-9.17c2.54,0,3.88,0.19,4.51,0.27v5.05h-3.61c-2.25,0-3.03,2.13-3.03,4.53v3.16h6.59l-0.89,5.78h-5.69v15.94C35.72,42.32,44,33.14,44,22C44,9.85,34.15,0,22,0z"/>
+                        </svg>
+                    </div>
+                    <div class="News__Icon News__IG">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="44px" height="44px" viewBox="0 0 44 44" style="overflow:visible;enable-background:new 0 0 44 44;" xml:space="preserve"> <defs></defs> <path d="M13,0C5.83,0,0,5.83,0,13v18c0,7.17,5.83,13,13,13h18c7.17,0,13-5.83,13-13V13c0-7.17-5.83-13-13-13H13z M34,8c1.1,0,2,0.9,2,2s-0.9,2-2,2s-2-0.9-2-2S32.9,8,34,8z M22,11c6.07,0,11,4.93,11,11s-4.93,11-11,11s-11-4.93-11-11S15.93,11,22,11zM22,13c-4.96,0-9,4.04-9,9s4.04,9,9,9s9-4.04,9-9S26.96,13,22,13z"/>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+        </article>
+        <button class="BtnType_1" id="Return_News">返回 最新消息</button>
+    </div>
+
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_News').addEventListener('click', function(){
+                document.location = './News.html'});
+
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            })
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+</body>
+</html>

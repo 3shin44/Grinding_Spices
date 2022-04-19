@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
+    <!-- CSS procedure: 
+    1. css reset
+    2. link icon from Fontawesome
+    3. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="SwitchMenu">
+    <div class="HeaderBar">
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="./Products.html">熱銷商品</a>
+            <a href="./Story.html">關於我們</a>
+            <a href="./News.html">最新消息</a>
+            <a href="#">門市/製造廠</a>
+            <span></span>
+            <div class="SocialMedia">
+                <a href="https://twitter.com/">
+                    <img src="./images/SocialMedia_TWR.png" alt="">
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/SocialMedia_FB.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/">
+                    <img src="./images/SocialMedia_IG.png" alt="">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./images/SocialMedia_YT.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>
+
+    <div class="News__Content">
+        <article class="Background Main__ArticleNews">
+            <h2 class="TitleText_3 MainFontColor">最新消息 NEWS</h2>
+            <section>
+                <div class="Main__News">
+                    <div class="Main__NewsGrid Main__News20220111" id="News20220111">
+                        <div class="Main__NewsDate MainFontColor">2022.01.11</div>
+                        <div class="Main__NewsHeadline MainFontColor">國際食品與飲料展覽會 最佳便攜包裝獎</div>
+                        <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
+                    </div>
+                    <div class="Main__NewsGrid Main__News20210820" id="News20210820">
+                        <div class="Main__NewsDate MainFontColor">2021.08.20</div>
+                        <div class="Main__NewsHeadline MainFontColor">2021全國特色農產烘焙精品</div>
+                        <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
+                    </div>
+                    <div class="Main__NewsGrid Main__News20190324" id="News20190324">
+                        <div class="Main__NewsDate MainFontColor">2019.03.24</div>
+                        <div class="Main__NewsHeadline MainFontColor">經濟部第13屆企業創新研究獎</div>
+                        <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+    </div>
+
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('News20220111').addEventListener('click', function(){
+                document.location = './News20220111.html'});
+            document.getElementById('News20210820').addEventListener('click', function(){
+                document.location = './News20210820.html'});
+            document.getElementById('News20190324').addEventListener('click', function(){
+                document.location = './News20190324.html'});
+
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            })
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+</body>
+</html>
