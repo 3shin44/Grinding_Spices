@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱銷產品 泰式椒麻風味</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
+    <!-- CSS procedure: 
+    1. css reset
+    2. link icon from Fontawesome
+    3. link jQuery
+    4. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="SwitchMenu">
+    <div class="HeaderBar">
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="#">熱銷商品</a>
+            <a href="./Story.html">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">門市/製造廠</a>
+            <span></span>
+            <div class="SocialMedia">
+                <a href="https://twitter.com/">
+                    <img src="./images/SocialMedia_TWR.png" alt="">
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/SocialMedia_FB.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/">
+                    <img src="./images/SocialMedia_IG.png" alt="">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./images/SocialMedia_YT.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>
+
+
+    <article class="Background Products__ArticleItem">
+        <div class="Products__Item SecondBcgColor">
+            <div class="Products__Content">
+                <div class="Products__Gallery col-xl-6 col-lg-12 col-md-12">
+                    <div class="Products__GalleryContainer">
+                        <img img id="GalleryPic" src="./images/Products/Products__ThaiSpicy_1.jpg" alt="">
+                    </div>
+                    <div class="Products__GalleryPreview">
+                        <img class="Preview" src="./images/Products/Products__ThaiSpicy_1.jpg" alt="">
+                        <img class="Preview" src="./images/Products/Products__ThaiSpicy_2.jpg" alt="">
+                        <img class="Preview" src="./images/Products/Products__ThaiSpicy_3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="Products__Info col-xl-6 col-lg-12 col-md-12">
+                    <h2 class="TitleText_3">泰式椒麻風味</h2>
+                    <p class="NoteText_2 NoteFontColor">販售規格</p>
+                    <form action="">
+                        </label>
+                        <label class="container">$350 / 300g*5包
+                        <input type="radio" name="radio" value="checked">
+                        <span class="checkmark"></span>
+                        </label>
+                        <label class="container">$1200 / 1.5Kg 包
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                    </form>
+                    <button class="BtnType_2">加入購物車</button>
+                    
+                    <p class="Products__Descript NoteText_1">
+                        ■泰式椒麻<br>
+                        泰式椒麻雞是一種常見於台灣泰式餐廳的菜餚，主要透過花椒、酒與醬油來醃製去骨雞腿，裹粉油炸而成。關於其起源大致有兩種說法，一說是修改自雲南菜，另一說是在緬甸打工的雲南人在台灣所發明。<br>
+                        在新疆和四川也有叫作椒麻雞的菜，與台灣「泰式」椒麻雞的主要差別是不會油炸，而是水煮後淋油。
+                    </p>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <script>
+        $(document).ready(function() {
+            $("img[id!='GalleryPic']").each(function() {
+                $(this).click(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+            });
+        });
+    </script>
+
+    <!-- Copyright Announcement -->
+    <footer>
+        <section class="Background Main__CopyrightBackground">
+            
+                <div class="Sitemap">
+                    <div class="Moreinfo">
+                        <a href="#">常見問題</a>
+                        <a href="#">商業合作</a>   
+                        <a href="#">服務條款</a>
+                        <a href="#">隱私政策</a>
+                    </div>
+                    <div class="SocailMedia">
+                        <a href="#">聯繫我們<i class="fa-regular fa-envelope"></i></a>
+                        <a href="#">線上客服<i class="fa-regular fa-comment"></i></a>
+                    </div>
+                              
+                </div>
+    
+                <div class="Main__Copyright">
+                    <h2>版權聲明</h2>
+                    <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
+                </div>
+        </section>
+      </footer>
+
+</body>
+</html>

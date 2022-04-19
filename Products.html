@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熱銷產品</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
+    <!-- CSS procedure: 
+    1. css reset
+    2. link icon from Fontawesome
+    3. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="SwitchMenu">
+    <div class="HeaderBar">
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
+            <a href="#">熱銷商品</a>
+            <a href="./Story.html">關於我們</a>
+            <a href="#">最新消息</a>
+            <a href="#">門市/製造廠</a>
+            <span></span>
+            <div class="SocialMedia">
+                <a href="https://twitter.com/">
+                    <img src="./images/SocialMedia_TWR.png" alt="">
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/SocialMedia_FB.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/">
+                    <img src="./images/SocialMedia_IG.png" alt="">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./images/SocialMedia_YT.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>
+
+
+    <article class="Background Products__Article">
+        <h2 class="TitleText_3 MainFontColor">熱銷產品 PRODUCTS</h2>
+        <section>
+            <div class="Products__Row"> <!-- row -->
+                <div class="Products__Col col-xl-3 col-lg-4 col-md-10">
+                    <div class="Products__Card" id="Products__Turmeric">
+                        <div class="Products__CardPic">
+                            <img src="./images/Main__Products_1.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">薑黃粉</p>
+                        <p class="MainFontColor NoteText_1">$350 / 500g 罐</p>
+                    </div>
+                </div>
+                <div class="Products__Col col-xl-3 col-lg-4 col-md-10">
+                    <div class="Products__Card" id="Products__Pepper">
+                        <div class="Products__CardPic">
+                            <img src="./images/Main__Products_2.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">黑胡椒粒</p>
+                        <p class="MainFontColor NoteText_1">$150 / 500g 罐</p>
+                    </div>
+                </div>
+                <div class="Products__Col col-xl-3 col-lg-4 col-md-10">
+                    <div class="Products__Card" id="Products__TeaEgg">
+                        <div class="Products__CardPic">
+                            <img src="./images/Main__Products_3.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">深焙茶葉蛋滷包</p>
+                        <p class="MainFontColor NoteText_1">$150 / 10 包</p>
+                    </div>
+                </div>
+                <div class="Products__Col col-xl-3 col-lg-4 col-md-10">
+                    <div class="Products__Card" id="Products__BakKutTeh">
+                        <div class="Products__CardPic">
+                            <img src="./images/Main__Products_4.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">南洋肉骨茶</p>
+                        <p class="MainFontColor NoteText_1">$550 / 5包</p>
+                    </div>
+                </div>
+                <div class="Products__Col col-xl-3 col-lg-4 col-md-10">
+                    <div class="Products__Card" id="Products__ThaiSpicy">
+                        <div class="Products__CardPic">
+                            <img src="./images/Main__Products_5.jpg">
+                        </div>
+                        <p class="MainFontColor ContentText_3">泰式椒麻風味</p>
+                        <p class="MainFontColor NoteText_1">$350 / 300g*5包</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </article>
+
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Products__Turmeric').addEventListener('click', function(){
+                document.location = './Products__Turmeric.html'});
+            document.getElementById('Products__Pepper').addEventListener('click', function(){
+                document.location = './Products__Pepper.html'});
+            document.getElementById('Products__TeaEgg').addEventListener('click', function(){
+                document.location = './Products__TeaEgg.html'});
+            document.getElementById('Products__BakKutTeh').addEventListener('click', function(){
+                document.location = './Products__BakKutTeh.html'});
+            document.getElementById('Products__ThaiSpicy').addEventListener('click', function(){
+                document.location = './Products__ThaiSpicy.html'});
+
+
+
+
+
+            let Logo = document.getElementsById("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            })
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+
+
+    <!-- Copyright Announcement -->
+    <footer>
+        <section class="Background Main__CopyrightBackground">
+            
+                <div class="Sitemap">
+                    <div class="Moreinfo">
+                        <a href="#">常見問題</a>
+                        <a href="#">商業合作</a>   
+                        <a href="#">服務條款</a>
+                        <a href="#">隱私政策</a>
+                    </div>
+                    <div class="SocailMedia">
+                        <a href="#">聯繫我們<i class="fa-regular fa-envelope"></i></a>
+                        <a href="#">線上客服<i class="fa-regular fa-comment"></i></a>
+                    </div>
+                              
+                </div>
+    
+                <div class="Main__Copyright">
+                    <h2>版權聲明</h2>
+                    <p>本網站(研磨香料)為緯育TibaMe前端工程師班專題成果作品，本平台僅供學習、展示之用。若有侵權疑慮，您可以私訊[緯育TibaMe]，後續會由專人協助處理</p>
+                </div>
+        </section>
+      </footer>
+
+</body>
+</html>
