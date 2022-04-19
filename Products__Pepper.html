@@ -47,7 +47,7 @@
                 </a>
             </div>
         </nav>
-        <div class="Logo">
+        <div class="Logo" id="Logo">
             <img src="./images/GS_Logo.png">
             <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
         </div>
@@ -97,12 +97,27 @@
                     </p>
                     
                 </div>
+                <button class="BtnType_2" id="Return_Products">回商品目錄</button>
+
             </div>
 
         </div>
 
     </article>
 
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_Products').addEventListener('click', function(){
+                document.location = './Products.html'});
+    
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            });
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
 
     <script>
         $(document).ready(function() {

@@ -47,7 +47,7 @@
                 </a>
             </div>
         </nav>
-        <div class="Logo">
+        <div class="Logo" id="Logo">
             <img src="./images/GS_Logo.png">
             <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
         </div>
@@ -95,14 +95,26 @@
                         肉骨茶（英語：Bak kut teh）是馬來半島的一道湯菜。肉骨茶的起源可以追蹤於馬來西亞。之後也廣傳於中國大陸、臺灣、海外華人地區。<br>
                         肉骨茶混合中藥（枸杞、黨參、當歸、玉竹、川芎）和香料（包括八角、茴香、桂皮、丁香、大蒜、甘草、花椒、甘蔗、羅漢果、胡椒）及肉排熬製多個小時的濃湯。在馬來西亞的一些高級餐館會加入海參和鮑魚一起熬製。 
                     </p>
-                    
                 </div>
+                <button class="BtnType_2" id="Return_Products">回商品目錄</button>
             </div>
-
         </div>
 
     </article>
 
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_Products').addEventListener('click', function(){
+                document.location = './Products.html'});
+    
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            });
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
 
     <script>
         $(document).ready(function() {
