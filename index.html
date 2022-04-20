@@ -9,26 +9,31 @@
     <!-- CSS procedure: 
     1. css reset
     2. link icon from Fontawesome
-    3. link project css -->
+    3. link jQuery
+    4. link project css -->
     <link rel="stylesheet" href="./reset.css">
     <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <script src="./jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./Grinding_Spices.css">
 </head>
 <body>
 
     <input type="checkbox" id="SwitchMenu">
     <div class="HeaderBar">
+        <label for="SwitchMenu" class="MenuOverlay"></label>
         <label class="Hamburger" for="SwitchMenu">
             <span></span>
             <span></span>
             <span></span>
         </label>
         <nav>
-            <a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a>
-            <a href="./Products.html">熱銷商品</a>
-            <a href="./Story.html">關於我們</a>
-            <a href="./News.html">最新消息</a>
-            <a href="#">門市/製造廠</a>
+            <ul>
+                <li><a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a></li>
+                <li><a href="./Products.html">熱銷商品</a></li>
+                <li><a href="./Story.html">關於我們</a></li>
+                <li><a href="./News.html">最新消息</a></li>
+                <li><a href="#">門市/製造廠</a></li>
+            </ul>
             <span></span>
             <div class="SocialMedia">
                 <a href="https://twitter.com/">
@@ -85,7 +90,7 @@
 
     <!-- About us -->
     <article class="Main__ArticleAboutUs Background">
-        <h2 class="TitleText_3 SecondFontColor">關於 研磨香料</h2>
+        <h2 class="TitleText_3 SecondFontColor TextShadow_1">關於 研磨香料</h2>
         <section>
             <div class="Content Main__AboutUsContent">
                 <div class="Main__AboutUsCard SecondBcgColor Ani_Reveal">
@@ -198,7 +203,7 @@
                     <p class="MainFontColor ContentText_1 TextBold">追求美味與價格的平衡點</p>
                     <p class="MainFontColor ContentText_2">隨著電子商務與物流網路成熟，我們能將更多優質產品直接送到您手上</p>
                     <p class="MainFontColor ContentText_3">論壇四個僅僅各級阿宅人民共和國，手裡社區是這樣加拿大灌水為你當初驅動按照，積極導航，提出了總算今年，怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實，新聞發佈既然戰鬥以下該公司上述都是湖口追求加上領導你的會議，到我財政浪費會不會，現代化你自己街。</p>
-                    <button class="BtnType_1 Ani_Reveal">瀏覽商品</button>
+                    <button class="BtnType_1">瀏覽商品</button>
                 </div>
                 <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
                     <div class="FoldFan">
@@ -210,7 +215,7 @@
             </div>
             <div class="Main__Products Main__ProductsSecondary"> <!-- row -->
                 <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                    <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCard" id="Main__Turmeric">
                         <div class="Main__ProductsCardPic">
                             <img src="./images/Main__Products_1.jpg">
                         </div>
@@ -219,7 +224,7 @@
                     </div>
                 </div>
                 <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                    <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCard" id="Main__Pepper">
                         <div class="Main__ProductsCardPic">
                             <img src="./images/Main__Products_2.jpg">
                         </div>
@@ -228,7 +233,7 @@
                     </div>
                 </div>
                 <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                    <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCard" id="Main__TeaEgg">
                         <div class="Main__ProductsCardPic">
                             <img src="./images/Main__Products_3.jpg">
                         </div>
@@ -237,7 +242,7 @@
                     </div>
                 </div>
                 <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                    <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCard" id="Main__BakKutTeh">
                         <div class="Main__ProductsCardPic">
                             <img src="./images/Main__Products_4.jpg">
                         </div>
@@ -246,7 +251,7 @@
                     </div>
                 </div>
                 <div class="Main__ProductsCol col-xl-3 col-lg-4 col-md-10">
-                    <div class="Main__ProductsCard">
+                    <div class="Main__ProductsCard" id="Main__ThaiSpicy">
                         <div class="Main__ProductsCardPic">
                             <img src="./images/Main__Products_5.jpg">
                         </div>
@@ -256,7 +261,7 @@
                 </div>
             </div>
             <div class="Main__ProductsLink"> <!-- row -->
-                <a href="#">瀏覽所有商品</a>
+                <a href="./Products.html">瀏覽所有商品 <i class="fa-solid fa-angle-right"></i></a>
             </div>
         </section>
     </article>
@@ -266,23 +271,23 @@
         <h2 class="TitleText_3 MainFontColor">最新消息</h2>
         <section>
             <div class="Main__News">
-                <div class="Main__NewsGrid Main__News20220111">
+                <div class="Main__NewsGrid Main__News20220111" id="News20220111">
                     <div class="Main__NewsDate MainFontColor">2022.01.11</div>
                     <div class="Main__NewsHeadline MainFontColor">國際食品與飲料展覽會 最佳便攜包裝獎</div>
                     <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
                 </div>
-                <div class="Main__NewsGrid Main__News20210820">
+                <div class="Main__NewsGrid Main__News20210820" id="News20210820">
                     <div class="Main__NewsDate MainFontColor">2021.08.20</div>
                     <div class="Main__NewsHeadline MainFontColor">2021全國特色農產烘焙精品</div>
                     <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
                 </div>
-                <div class="Main__NewsGrid Main__News20190324">
+                <div class="Main__NewsGrid Main__News20190324" id="News20190324">
                     <div class="Main__NewsDate MainFontColor">2019.03.24</div>
                     <div class="Main__NewsHeadline MainFontColor">經濟部第13屆企業創新研究獎</div>
                     <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
                 </div>
                 <div class="Main__NewsLink">
-                    <a href="#">瀏覽所有訊息</a>
+                    <a href="./News.html">瀏覽所有訊息 <i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>
         </section>
@@ -378,9 +383,30 @@
     </section>
   </footer>
 
+
+  <!-- JS create link -->
     <script>
         function ToDo(){
             // find all clickable item
+            document.getElementById('Main__Turmeric').addEventListener('click', function(){
+                document.location = './Products__Turmeric.html'});
+            document.getElementById('Main__Pepper').addEventListener('click', function(){
+                document.location = './Products__Pepper.html'});
+            document.getElementById('Main__TeaEgg').addEventListener('click', function(){
+                document.location = './Products__TeaEgg.html'});
+            document.getElementById('Main__BakKutTeh').addEventListener('click', function(){
+                document.location = './Products__BakKutTeh.html'});
+            document.getElementById('Main__ThaiSpicy').addEventListener('click', function(){
+                document.location = './Products__ThaiSpicy.html'});
+
+            document.getElementById('News20220111').addEventListener('click', function(){
+                document.location = './News20220111.html'});
+            document.getElementById('News20210820').addEventListener('click', function(){
+                document.location = './News20210820.html'});
+            document.getElementById('News20190324').addEventListener('click', function(){
+                document.location = './News20190324.html'});
+
+
             let Logo = document.getElementsByClassName("Logo");
             Logo[0].addEventListener('click', function(){
                 document.location = './index.html'
@@ -389,6 +415,7 @@
         window.addEventListener('load', ToDo, false);
     </script>
 
+<!-- JS trigger animation -->
     <script>
         // To check the scroll position on page load
         window.addEventListener('load', function(){
@@ -410,5 +437,20 @@
         });
     </script>
 
+<!-- JQ Lock Screen -->
+    <script>
+
+        // original jQuery
+        // $(function(){$("#SwitchMenu").on("click", function(){$("body").toggleClass("ScrollLock");
+        //     });
+        // });
+
+        // $(document).ready(function(){
+        //     $("#SwitchMenu").on("click", function(){
+        //         $("body").toggleClass("ScrollLock");
+        //     });
+        // });
+
+    </script>
 </body>
 </html>

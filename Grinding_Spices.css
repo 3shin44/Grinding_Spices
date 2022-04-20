@@ -44,7 +44,7 @@ li{
     background-color: #faf0eb;
 }
 .TitleText_1{
-    font-size: 32px;
+    font-size: 28px;
 }
 .TitleText_2{
     font-size: 30px;
@@ -197,6 +197,9 @@ li{
 
 /* Naigator bar */
 .Logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
 }
@@ -312,13 +315,40 @@ li{
 #SwitchMenu:checked ~ .HeaderBar nav{
     left: 0;
 }
+
+#SwitchMenu:checked ~ .HeaderBar .MenuOverlay{
+    visibility: visible;
+    opacity: 0.7;
+}
+.MenuOverlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    transition: .3s;
+    opacity: 1;
+}
+.ScrollLock {
+    overflow: hidden;
+}
+
+nav>ul{
+    display: flex;
+}
+nav>ul>li a{
+    font-size: 20px;
+    margin-right: 10px;
+}
 nav i{
     margin-right: 10px;
 }
 .SocialMedia{
     display: flex;
     align-items: center;
-
 }
 
 .SocialMedia img{
@@ -346,6 +376,15 @@ nav i{
         transition: 0.8s;
         background-color: #e76949;
     }
+    nav>ul{
+        flex-direction: column;
+    }
+    nav>ul li{
+        margin-top: 30px;
+    }   
+    nav>ul li:last-child{
+        margin-bottom: 30px;
+    } 
     nav a{
         padding: 20px;
     }
@@ -362,6 +401,9 @@ nav i{
     }
     .SmallLogin, .SocialMedia{
         display: none;
+    }
+    nav>ul{
+        flex-direction: row;
     }
 }
 
@@ -425,6 +467,16 @@ nav i{
 .Main__ArticleAboutUs h2{
     padding-top: 30px;
     text-align: center;
+}
+@media screen and (max-width: 767px) {
+    .Main__ArticleAboutUs h2{
+        text-shadow: 3px 3px 3px 3px rgba(245, 245, 245, 0.7);
+    }
+}
+@media screen and (min-width: 767px) {
+    .Main__ArticleAboutUs h2{
+        text-shadow: none;
+    }
 }
 .Main__AboutUsCard{
     position: relative;
@@ -627,11 +679,6 @@ nav i{
 .Main__ProductsPic{
     position: relative;
 }
-.FoldFan img{
-    width: 100%;
-    border-radius: 5px;
-    display: block;
-}
 .Main__ProductsSecondary{
     display: flex;
     flex-wrap: wrap;
@@ -687,7 +734,7 @@ nav i{
     .Main__ProductsCard:hover{
         cursor: pointer;
     }
-    .Main__ProductsCardPic img:hover{
+    .Main__ProductsCard:hover img{
 	transform: scale(1.2);
     }
 }
@@ -712,14 +759,19 @@ nav i{
     text-align: right;
 }
 /* FoldFan Animation */
+.FoldFan img{
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
 .FoldFan {
     display: block;
     position: relative;
     width: 100%;
   }
 .FoldFan div {
-    width: 200px;
-    position: absolute;
+    width: 70%;
+    position: relative;
     top: 0px;
     transform-origin: bottom left;
     display: inline-block;
@@ -729,16 +781,23 @@ nav i{
 .FoldFan div img{
       display: block;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      width: 70%;
 }
   
 .FoldFan div:nth-child(1) {
     animation: FoldFan-3-motion 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    position: absolute;
+    left: 45%;
 }
 .FoldFan div:nth-child(2) {
     animation: FoldFan-2-motion 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    position: absolute;
+    left: 45%;
 }
 .FoldFan div:nth-child(3) {
     animation: FoldFan-1-motion 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    position: relative;
+    left: 45%;
 }
   
 @keyframes FoldFan-1-motion {
@@ -762,7 +821,6 @@ nav i{
 
 /* News */
 .Main__ArticleNews{
-    text-align: center;
     padding: 30px 0 30px 0;
 }
 .Main__ArticleNews>h2{
@@ -783,24 +841,35 @@ nav i{
     align-items: center;
     border-bottom: 1px solid white;
 }
+.Main__NewsGrid:hover{
+    cursor: pointer;
+    transform: translateX(15px);
+    transition: .5s;
+}
+.Main__NewsClick{
+    background-color: #efefef;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
 .Main__NewsClick i{
     text-align: center;
-    background-color: #fafafa;
-    border-radius: 50%;
-    width: 15px;
-    aspect-ratio: 1/1;
+    width: 25px;
+    height: 25px;
 }
 .Main__NewsHeadline, .Main__NewsDate{
     text-align: left;
 }
 @media screen and (max-width: 767px) {
     .Main__NewsGrid{
-        grid-template-rows: 85% 15%;
-        grid-template-columns: 85% 15%;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 90% 10%;
+
     }
     .Main__NewsDate{
         grid-row: 1/2;
         grid-column: 1/2;
+
     }
     .Main__NewsHeadline{
         grid-row: 2/3;
@@ -829,7 +898,7 @@ nav i{
     .Main__NewsClick{
         grid-row: 1 / 2;
         grid-column: 3 /4;
-        text-align: right;
+        margin-left: auto;
     }
 }
 .Main__NewsLink{
