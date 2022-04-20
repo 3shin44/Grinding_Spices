@@ -4,6 +4,7 @@ html, body{
     font-family:Noto Sans TC,Noto Sans;
     line-height: 25px;
     letter-spacing: 2px;
+    scroll-behavior: smooth;
 }
 *{
     box-sizing: border-box;
@@ -1034,14 +1035,14 @@ footer{
 
 /* Page__Story/Promises */
 .Story__Background{
-    background-image: url('https://picsum.photos/1500/500/?random=10');
+    background-image: url('./images/Story__Bcg.jpg');
     background-repeat: no-repeat;
+    background-size: contain;
     background-position: top center;
-    aspect-ratio: 3/1;
+    aspect-ratio: 1.5/1;
 }
-
 .Story__Content{
-    max-width: 1200px;
+    width: 1200px;
     padding: 30px;
     margin: auto;
 }
@@ -1074,7 +1075,7 @@ footer{
 }
 @media screen and (max-width: 995px) {
     .Story__Content{
-        width: 90%;
+        width: 96%;
     }
     .Story__Special{
         display: flex;
@@ -1197,7 +1198,24 @@ footer{
 .GridNo5{
     grid-row: 5/6;
 }
-
+.Story__Return{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #e76949;
+    background-color: #faf0eb;
+    left: 85%;
+    top: 90%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Story__Return i{
+    font-size: 30px;
+    color: #e76949;
+}
 
 /* Page__Products */
 .Products__Article{
