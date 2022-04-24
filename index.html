@@ -28,7 +28,7 @@
         </label>
         <nav>
             <ul>
-                <li><a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a></li>
+                <li><label id="LoginLabel_Small" for="LoginSwtich" class="SmallLogin MainFontColor"><i class="fa-solid fa-user"></i>Login</label></li>
                 <li><a href="./Products.html">熱銷商品</a></li>
                 <li><a href="./Story.html">關於我們</a></li>
                 <li><a href="./News.html">最新消息</a></li>
@@ -55,7 +55,8 @@
             <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
         </div>
         <div class="MemberCart">
-            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            
+            <label id="LoginLabel" for="LoginSwtich" class="DesktopLogin MainFontColor">Login</label>
             <a href="">
                 <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
             </a>
@@ -384,6 +385,52 @@
   </footer>
 
 
+  <!-- LoginBox/GuestBox -->
+  <input type="checkbox" id="LoginSwtich">
+  
+  <label for="LoginSwtich" id="LoginBcg"></label>
+  <div class="LoginBox" id="LoginBox">
+      <table>
+          <thead><th colspan="2">會員登錄</th></thead>
+          <tr>
+              <td>帳號</td>
+              <td><input type="text" value="Guest" id="LoginID"></td>
+          </tr>
+          <tr>
+              <td>密碼</td>
+              <td><input type="password" value="Guest" id="LoginPW"></td>
+          </tr>
+          <tr>
+              <td colspan="2" id="LoginMsg"></td>
+          </tr>
+          <tr>
+              <td><button id="LoginConfirm">登入</button></td>
+              <td><button id="LoginCancel">取消</button></td>
+              
+          </tr>
+      </table>
+  </div>
+
+  <input type="checkbox" id="GuestSwtich">
+  <label for="GuestSwtich" id="GuestBcg"></label>
+  <div class="GuestBox" id="GuestBox">
+    <table>
+        <thead><th colspan="2">會員資料</th></thead>
+        <tr>
+            <td>客戶名稱</td>
+            <td>GUEST</td>
+        </tr>
+        <tr>
+            <td>會員編號</td>
+            <td>#9527</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="LoginOut">登出</button></td>
+        </tr>
+    </table>
+</div>
+
+
   <!-- JS create link -->
     <script>
         function ToDo(){
@@ -437,20 +484,51 @@
         });
     </script>
 
-<!-- JQ Lock Screen -->
+<!-- LoginBox JS  LoginLabel_Small-->
     <script>
+        function LoginProcess(){
+            let LoginID = document.getElementById('LoginID');
+            let LoginPW = document.getElementById('LoginPW');
+            if (LoginID.value == 'Guest' && LoginPW.value == 'Guest' ){
+                document.getElementById('LoginLabel').innerText = 'Guest';
+                document.getElementById('LoginLabel_Small').innerText = 'Guest #9527';
+                document.getElementById('LoginSwtich').checked = false;
+                document.getElementById("LoginLabel").setAttribute('for', 'GuestSwtich');
+                document.getElementById("LoginLabel_Small").setAttribute('for', 'GuestSwtich');
+                }
+            else{
+                document.getElementById('LoginMsg').innerText = '帳號密碼錯誤，請檢查後再輸入';
+                }
+        }
 
-        // original jQuery
-        // $(function(){$("#SwitchMenu").on("click", function(){$("body").toggleClass("ScrollLock");
-        //     });
-        // });
+        function LogOutProcess(){
+            let LogOut = document.getElementById('LoginOut');
+            document.getElementById('LoginLabel').innerText = 'Login';
+            document.getElementById('LoginLabel_Small').innerText = 'Login';
+            document.getElementById('GuestSwtich').checked = false;
+            document.getElementById("LoginLabel").setAttribute('for', 'LoginSwtich');
+            document.getElementById("LoginLabel_Small").setAttribute('for', 'LoginSwtich');
+        }
 
-        // $(document).ready(function(){
-        //     $("#SwitchMenu").on("click", function(){
-        //         $("body").toggleClass("ScrollLock");
-        //     });
-        // });
+        function ToDo(){
 
+            let LoginCancel = document.getElementById('LoginCancel');
+            let LoginConfirm = document.getElementById('LoginConfirm');
+            let LogOut = document.getElementById('LoginOut');
+
+
+            LoginCancel.addEventListener('click', function(){
+                document.getElementById('LoginID').value = 'Guest';
+                document.getElementById('LoginPW').value = 'Guest';
+                document.getElementById('LoginMsg').innerText = '';
+                document.getElementById('LoginSwtich').checked = false;
+            });
+            
+            LoginConfirm.addEventListener('click', LoginProcess);
+            LogOut.addEventListener('click', LogOutProcess);
+        }
+
+        window.addEventListener('load', ToDo);
     </script>
 </body>
 </html>
