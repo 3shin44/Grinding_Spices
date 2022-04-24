@@ -35,6 +35,9 @@ li{
 .SecondFontColor{
     color: #ec6d4e;
 }
+.RegularFontColor{
+    color: #0e0e0e;
+}
 .NoteFontColor{
     color: #898989;
 }
@@ -123,6 +126,45 @@ li{
     box-shadow: 0px 0px 0px 2px #faf0eb inset, 
     0px 4px 12px rgba(0, 0, 0, 0.5);
 }
+
+/* Hover effect not available under width: 1200px */
+@media screen and (max-width: 1199px) {
+    .HoverEffect1:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 0;
+        bottom: 0;
+        left: 0;
+        background-color: none;
+        transition: none;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .HoverEffect1:hover:before{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .HoverEffect1:before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #efefef;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+    .HoverEffect1{
+        display: inline-block;
+        position: relative;
+        color: #efefef;
+    }
+}
+
 
 
 /* Universal Breakpoint for columns */
@@ -229,10 +271,7 @@ li{
     display: flex;
     align-items: center;
 }
-.DesktopLogin:hover{
-    transition: 0.5s;
-    color: #ec6d4e;
-}
+
 .Cart{
     width: 45px;
     height: 45px;

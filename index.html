@@ -29,10 +29,10 @@
         <nav>
             <ul>
                 <li><label id="LoginLabel_Small" for="LoginSwtich" class="SmallLogin MainFontColor"><i class="fa-solid fa-user"></i>Login</label></li>
-                <li><a href="./Products.html">熱銷商品</a></li>
-                <li><a href="./Story.html">關於我們</a></li>
-                <li><a href="./News.html">最新消息</a></li>
-                <li><a href="./Shop_Store.html">門市/製造廠</a></li>
+                <li><a class="HoverEffect1" href="./Products.html">熱銷商品</a></li>
+                <li><a class="HoverEffect1" href="./Story.html">關於我們</a></li>
+                <li><a class="HoverEffect1" href="./News.html">最新消息</a></li>
+                <li><a class="HoverEffect1" href="./Shop_Store.html">門市/製造廠</a></li>
             </ul>
             <span></span>
             <div class="SocialMedia">
@@ -56,7 +56,7 @@
         </div>
         <div class="MemberCart">
             
-            <label id="LoginLabel" for="LoginSwtich" class="DesktopLogin MainFontColor">Login</label>
+            <label id="LoginLabel" for="LoginSwtich" class="ContentText_1 MainFontColor HoverEffect1">Login</label>
             <a href="">
                 <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
             </a>
@@ -179,13 +179,13 @@
 
     <!-- Story/Promise -->
     <article class="Background Main__ArticleStory">
-        <h2 class="TitleText_3 MainFontColor">產品特色</h2>
+        <h2 class="TitleText_3 MainFontColor">品牌緣起</h2>
         <section> 
             <div class="Main__Story"> <!-- row -->
                 <div class="Main__StoryText col-md-12 col-lg-12 col-xl-6">
                     <p class="ContentText_1 MainFontColor">追求美味與價格的平衡點</p>
                     <p class="ContentText_3 MainFontColor">每次只需要用一點點的香料，卻總找不到適合的販售規格，難得找到供應店家也要苦等多時才能到貨</p>
-                    <button class="BtnType_1">生產過程</button>
+                    <button id="Main_StoryBtn" class="BtnType_1">了解我們</button>
                 </div>
                 <div class="Main__StoryPic col-md-12 col-lg-12 col-xl-6">
                     <img src="./images/Main__StoryPic.jpg">
@@ -203,7 +203,7 @@
                 <div class="Main__ProductsText col-md-12 col-lg-12 col-xl-6">
                     <p class="MainFontColor ContentText_1 TextBold">追求美味與價格的平衡點</p>
                     <p class="MainFontColor ContentText_2">隨著電子商務與物流網路成熟，我們能將更多優質產品直接送到您手上</p>
-                    <p class="MainFontColor ContentText_3">論壇四個僅僅各級阿宅人民共和國，手裡社區是這樣加拿大灌水為你當初驅動按照，積極導航，提出了總算今年，怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實，新聞發佈既然戰鬥以下該公司上述都是湖口追求加上領導你的會議，到我財政浪費會不會，現代化你自己街。</p>
+                    <p class="MainFontColor ContentText_3">水為你當初驅動按照怎麼規定字元警告，處罰休息決策心靈來了當你所需網路外貿落實現代化你自己街。</p>
                     <button class="BtnType_1">瀏覽商品</button>
                 </div>
                 <div class="Main__ProductsPic col-md-12 col-lg-12 col-xl-6">
@@ -262,7 +262,7 @@
                 </div>
             </div>
             <div class="Main__ProductsLink"> <!-- row -->
-                <a href="./Products.html">瀏覽所有商品 <i class="fa-solid fa-angle-right"></i></a>
+                <a class="HoverEffect1" href="./Products.html">瀏覽所有商品 <i class="fa-solid fa-angle-right"></i></a>
             </div>
         </section>
     </article>
@@ -288,7 +288,7 @@
                     <div class="Main__NewsClick"><i class="fa-solid fa-angle-right"></i></div>
                 </div>
                 <div class="Main__NewsLink">
-                    <a href="./News.html">瀏覽所有訊息 <i class="fa-solid fa-angle-right"></i></a>
+                    <a class="HoverEffect1" href="./News.html">瀏覽所有訊息 <i class="fa-solid fa-angle-right"></i></a>
                 </div>
             </div>
         </section>
@@ -314,7 +314,7 @@
                 <p>門市: 02-33221368</p>
                 <p>製造廠: 03-4251108</p>    
                 <br>      
-                <button class="BtnType_2">瀏覽 門市/製造廠 資訊</button>
+                <button id="Main_ShopBtn" class="BtnType_2">瀏覽 門市/製造廠 資訊</button>
             </div>
         </section>
     </article>
@@ -431,10 +431,16 @@
 </div>
 
 
-  <!-- JS create link -->
+  <!-- JS create link Main_StoryBtn-->
     <script>
         function ToDo(){
             // find all clickable item
+            document.getElementById('Main_StoryBtn').addEventListener('click', function(){
+                document.location = './Story.html'});
+                            
+            document.getElementById('Main_ShopBtn').addEventListener('click', function(){
+                document.location = './Shop_Store.html'});
+
             document.getElementById('Main__Turmeric').addEventListener('click', function(){
                 document.location = './Products__Turmeric.html'});
             document.getElementById('Main__Pepper').addEventListener('click', function(){
@@ -504,7 +510,8 @@
         function LogOutProcess(){
             let LogOut = document.getElementById('LoginOut');
             document.getElementById('LoginLabel').innerText = 'Login';
-            document.getElementById('LoginLabel_Small').innerText = 'Login';
+            // Due to fontAwesome unique icon, set LoginLabel_Small by innerHTML
+            document.getElementById('LoginLabel_Small').innerHTML = '<i class="fa-solid fa-user"></i>Login';
             document.getElementById('GuestSwtich').checked = false;
             document.getElementById("LoginLabel").setAttribute('for', 'LoginSwtich');
             document.getElementById("LoginLabel_Small").setAttribute('for', 'LoginSwtich');
