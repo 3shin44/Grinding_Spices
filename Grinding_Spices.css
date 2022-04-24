@@ -1454,3 +1454,98 @@ footer{
     margin: 30px 0 30px 50%;
     transform: translateX(-50%);
 }
+
+
+/* Shop/Factory */
+.Shop__ArticleShop h2{
+    width: 100%;
+    margin: 30px auto 30px auto;
+    text-align: center;
+    
+}
+.Shop__ArticleShop section{
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+}
+.CarouselBox{
+    margin: auto;
+    border-radius: 10px;
+}
+@media screen and (max-width: 995px) {
+    .CarouselBox{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 996px) {
+    .CarouselBox{
+        max-width: 1000px;
+    }
+}
+.Silder{
+    position: relative;
+    overflow: hidden;
+}
+.Gallery{
+    position: absolute;
+    list-style: none;
+    display: flex;
+}
+.Gallery li img{
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+}
+.Shop__Info{
+    padding: 30px;
+    margin: auto;
+}
+@media screen and (max-width: 767px) {
+    .Shop__Info{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 996px) {
+    .Shop__Info{
+        width: 70%;
+    }
+}
+@media screen and (min-width: 996px) {
+    .Shop__Info{
+        max-width: 600px;
+    }
+}
+.Shop__Info p:first-child{
+    text-align: center;
+}
+.Shop__SwitchBtn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Shop__SwitchBtn button:first-child{
+    margin: 15px 0 15px 0;
+}
+#Shop__GoogleMap{
+    width: 120px;
+    font-size: 16px;
+    text-align: center;
+    color: #fffaf8;
+    font-weight: bold;
+    background-color: #fb957c;
+    padding: 5px 0 5px 0;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-bottom: 15px;
+}
+#Shop__GoogleMap i{
+    margin-right: 10px;
+}
+
+#Shop__GoogleMap:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}

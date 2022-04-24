@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研磨香料</title>
+    <link rel="icon" href="./images/GS_Icon.ico" />
+    <!-- CSS procedure: 
+    1. css reset
+    2. link icon from Fontawesome
+    3. link jQuery
+    4. link project css -->
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://kit.fontawesome.com/fff1ca20e5.js" crossorigin="anonymous"></script>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./Grinding_Spices.css">
+</head>
+<body>
+
+    <input type="checkbox" id="SwitchMenu">
+    <div class="HeaderBar">
+        <label for="SwitchMenu" class="MenuOverlay"></label>
+        <label class="Hamburger" for="SwitchMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a></li>
+                <li><a href="./Products.html">熱銷商品</a></li>
+                <li><a href="./Story.html">關於我們</a></li>
+                <li><a href="./News.html">最新消息</a></li>
+                <li><a href="./Shop.html">門市/製造廠</a></li>
+            </ul>
+            <span></span>
+            <div class="SocialMedia">
+                <a href="https://twitter.com/">
+                    <img src="./images/SocialMedia_TWR.png" alt="">
+                </a>
+                <a href="https://facebook.com/">
+                    <img src="./images/SocialMedia_FB.png" alt="">
+                </a>
+                <a href="https://www.instagram.com/">
+                    <img src="./images/SocialMedia_IG.png" alt="">
+                </a>
+                <a href="https://www.youtube.com/">
+                    <img src="./images/SocialMedia_YT.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="Logo">
+            <img src="./images/GS_Logo.png">
+            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+        </div>
+        <div class="MemberCart">
+            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            <a href="">
+                <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
+            </a>
+        </div>
+    </div>  
+
+    <div class="Shop__Content">
+        <article class="Background Shop__ArticleShop">
+            <h2 class="TitleText_3 MainFontColor">門市/製造廠 | Store/Factory</h2>
+            <section class="SecondBcgColor">
+                <div class="CarouselBox">
+                    <div class="Silder">
+                        <ul class="Gallery">
+                            <li><img class="GalleryPic" src="./images/Shop/Shop__Store1.jpg"></li>
+                            <li><img class="GalleryPic" src="./images/Shop/Shop__Store2.jpg"></li>
+                            <li><img class="GalleryPic" src="./images/Shop/Shop__Store3.jpg"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="Shop__Info">
+                    <p class="ContentText_2 SecondFontColor TextBold">門市 | Store</p>
+                    <br>
+                    <p class="TextBold ContentText_3">地點</p>
+                    <p class="NoteText_1">100台北市中正區濟南路一段321號</p>
+                    <button id="Shop__GoogleMap"><i class="fa-solid fa-location-dot"></i>Google Map</button>   
+                    <br>
+                    <p class="TextBold ContentText_3">營業時間</p>
+                    <p class="NoteText_1">二 ~ 六 08:30~17:30</p>
+                    <br>
+                    <p class="TextBold ContentText_3">連絡電話</p>
+                    <p class="NoteText_1">02-33221368</p>
+                    <br>
+                    <p class="TextBold ContentText_3">門市 簡介</p>
+                    <p class="NoteText_2">適用於下載名稱本網站最終全家規模經過病人已經重要，每年已被裝置採購篇文章動畫迅速衝突吃飯，承諾遺憾日子立刻成長編號是否聯合全家好激動推薦完了儘管合適。</p>
+                    <div class="Shop__SwitchBtn">
+                        <button class="BtnType_2" id="ShopBtn_Store">門市/Store</button>
+                        <button class="BtnType_2" id="ShopBtn_Factory">製造廠/Factory</button>
+                    </div>
+                    
+                </div>
+            </section>
+        </article>
+
+        
+        <script>
+            function ToDo(){
+                // find all products and create link
+                document.getElementById('ShopBtn_Store').addEventListener('click', function(){
+                    document.location = './Shop_Store.html'});
+
+                document.getElementById('ShopBtn_Factory').addEventListener('click', function(){
+                    document.location = './Shop_Factory.html'});
+
+                document.getElementById('Shop__GoogleMap').addEventListener('click', function(){
+                document.location = 'https://www.google.com.tw/maps'});
+
+    
+                let Logo = document.getElementsByClassName("Logo");
+                Logo[0].addEventListener('click', function(){
+                    document.location = './index.html'
+                })
+            }
+            window.addEventListener('load', ToDo, false);
+        </script>
+
+
+        <script>
+            // RWD Carousel, using JS for set parental height
+            $(function(){
+                // delay 1500ms when page fully loaded, get Pic width to set parental height
+                // note: ratio of pics are 1:1, so take width as height
+                setTimeout(function(){
+                    $('.Silder').width($('.CarouselBox')[0].clientWidth);
+                    $('.Silder').height($('.CarouselBox')[0].clientWidth);
+                    $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
+                }, 1500);
+                
+                // reset width/height after window resize
+                $(window).resize(function(){
+                        $('.Silder').width($('.CarouselBox')[0].clientWidth);
+                        $('.Silder').height($('.CarouselBox')[0].clientWidth);
+                        $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
+                    }
+                );
+            });
+            
+            // Carousel function
+            let Timer = 0;
+            function Carousel(){
+                let GalleryIndex = $('.Gallery li').length;
+                let GalleryPicWidth = $('.GalleryPic')[0].clientWidth;
+                $('.Gallery').animate({
+                    left: Timer * GalleryPicWidth * -1,
+                });
+                Timer++;
+                if (Timer == GalleryIndex){
+                    Timer = 0;
+                }
+            }
+
+            $(function(){
+               setInterval(Carousel, 3000);
+            });
+        </script>
+
+</body>
+</html>
