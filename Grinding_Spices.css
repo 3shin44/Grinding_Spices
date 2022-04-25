@@ -168,7 +168,7 @@ li{
 
 
 /* Universal Breakpoint for columns */
-@media screen and (max-width:995px) {
+@media screen and (max-width:991px) {
     .col-md-1{ width: 8.333333%;}
     .col-md-2{ width: 16.666666%;}
     .col-md-3{ width: 25%;}
@@ -183,7 +183,7 @@ li{
     .col-md-12{ width: 100%;}
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .col-lg-1{ width: 8.333333%;}
     .col-lg-2{ width: 16.666666%;}
     .col-lg-3{ width: 25%;}
@@ -532,7 +532,7 @@ nav i{
     border-radius: 15px;
 }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .Main__ArticleAboutUs{
         padding: 30px 0 30px 0;
     }
@@ -545,7 +545,7 @@ nav i{
         margin: auto;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Main__AboutUsContent{
         aspect-ratio: 4/3;
     }
@@ -1119,7 +1119,7 @@ footer{
     
 }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .Story__Content{
         width: 96%;
     }
@@ -1144,7 +1144,7 @@ footer{
         padding: 0 0 30px 0;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Story__Special{
         display: flex;
         margin-bottom: 30px;
@@ -1205,7 +1205,7 @@ footer{
     justify-content: start;
     align-items: center;
 }
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .Story__CardAwardGrid{
         grid-template-columns: 1fr;
         grid-template-rows: fit-content fit-content;
@@ -1218,7 +1218,7 @@ footer{
         padding-bottom: 10px;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Story__CardAwardGrid{
         grid-template-columns: 10% 90%;
         grid-template-rows: 100%;
@@ -1286,7 +1286,7 @@ footer{
     border-radius: 10px;
 }
 
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .Products__Card p{
         font-size: 20px;
     }
@@ -1419,13 +1419,13 @@ footer{
     display: block;
     margin: 30px 0 0 0;
 }
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .Products__Descript{
         padding: 30px 0 30px 0;
         width: 90%;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Products__Descript{
         padding: 30px 0 30px 0;
         width: 65%;
@@ -1544,12 +1544,12 @@ footer{
     margin: auto;
     border-radius: 10px;
 }
-@media screen and (max-width: 995px) {
+@media screen and (max-width: 991px) {
     .CarouselBox{
         width: 80%;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .CarouselBox{
         max-width: 1000px;
     }
@@ -1577,12 +1577,12 @@ footer{
         width: 100%;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Shop__Info{
         width: 70%;
     }
 }
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 992px) {
     .Shop__Info{
         max-width: 600px;
     }
