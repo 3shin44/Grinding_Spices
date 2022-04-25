@@ -27,7 +27,6 @@ $(function(){
     $(window).resize(function(){
         let newWidth = window.innerWidth;
        if ( newWidth != OriginWindowWidth){
-           console.log('Changes');
             $('.Main__Slider').width($('.Main__CarouselBox')[0].clientWidth);
             $('.Main__Slider').height($('.Main__CarouselBox')[0].clientWidth);
             $('.GalleryPic').width($('.Main__CarouselBox')[0].clientWidth);
