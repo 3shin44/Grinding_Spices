@@ -496,27 +496,25 @@ nav i{
     writing-mode: vertical-rl;
     line-height: 30px;
 }
-.Main__Carousel{
+.Main__CarouselBox{
     width: 70%;
     overflow: hidden;
 }
-.Main__CarouselSlider>ul{
+.Main__Slider{
+    position: relative;
+    overflow: hidden;
+}
+.Main__Gallery{
+    position: absolute;
+    left: 0;
+    list-style: none;
     display: flex;
-    align-items: center;
-    animation-name: CSS_Carousel;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-direction: alternate;
+    justify-content: space-between;
+ 
 }
-@keyframes CSS_Carousel{
-    0% {transform: translate3d(0, 0, 0);}
-    100% {transform: translate3d(-50%, 0, 0);}  
-    /* 此處要設定-50%, 剛好跑到父層顯示窗一半處 */
-}
-
-.Main__CarouselSlider>ul>li{
-    margin-right:15px;
+.Main__Gallery li img{
+    display: block;
+    width: 100%;
 }
 
 /* About Us */
