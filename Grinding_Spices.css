@@ -1189,7 +1189,7 @@ footer{
     
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
     .Story__Content{
         width: 96%;
     }
