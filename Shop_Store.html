@@ -73,6 +73,8 @@
                             <li><img class="GalleryPic" src="./images/Shop/Shop__Store2.jpg"></li>
                             <li><img class="GalleryPic" src="./images/Shop/Shop__Store3.jpg"></li>
                         </ul>
+                        <ul id="Indicator">
+                        </ul>
                     </div>
                 </div>
 
@@ -132,13 +134,35 @@
                     $('.Silder').width($('.CarouselBox')[0].clientWidth);
                     $('.Silder').height($('.CarouselBox')[0].clientWidth);
                     $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
-                }, 1500);
+
+                    // add indicator and mark first one
+                    let CarouselBoxWidth = $('.CarouselBox').width();
+                    let ItemCount = $('.Gallery li').length;
+                    for (let i =0; i<ItemCount; i++){
+                        $('#Indicator').append(`<li></li>`);
+                    }
+                    $('#Indicator li:nth-child(1)').addClass('ClickDot');
+                    $('.Gallery').width( CarouselBoxWidth*ItemCount);
+                    $('.Gallery li').width(CarouselBoxWidth); 
+
+
+                }, 2000);
                 
                 // reset width/height after window resize
                 $(window).resize(function(){
                         $('.Silder').width($('.CarouselBox')[0].clientWidth);
                         $('.Silder').height($('.CarouselBox')[0].clientWidth);
                         $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
+
+                        // add indicator and mark first one
+                        let CarouselBoxWidth = $('.CarouselBox').width();
+                        let ItemCount = $('.Gallery li').length;
+                        for (let i =0; i<ItemCount; i++){
+                            $('#Indicator').append(`<li></li>`);
+                        }
+                        $('#Indicator li:nth-child(1)').addClass('ClickDot');
+                        $('.Gallery').width( CarouselBoxWidth*ItemCount);
+                        $('.Gallery li').width(CarouselBoxWidth); 
                     }
                 );
             });
@@ -151,6 +175,15 @@
                 $('.Gallery').animate({
                     left: Timer * GalleryPicWidth * -1,
                 });
+                if (Timer == 0){
+                    // clear last one dot
+                    $(`#Indicator li:nth-child(${GalleryIndex})`).removeClass('ClickDot');
+                }
+
+                // clear previous ClickDot, set new one with pink
+                $(`#Indicator li:nth-child(${Timer})`).removeClass('ClickDot');
+                $(`#Indicator li:nth-child(${Timer+1})`).addClass('ClickDot');
+
                 Timer++;
                 if (Timer == GalleryIndex){
                     Timer = 0;

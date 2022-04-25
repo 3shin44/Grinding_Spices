@@ -1568,6 +1568,27 @@ footer{
     display: block;
     width: 100%;
 }
+#Indicator{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#Indicator li{
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	background-color: #8b837f;
+	display: inline-block;
+	margin: 5px;
+
+}
+#Indicator li.ClickDot{
+	background-color: #fb957c;
+}
+
+
+
 .Shop__Info{
     padding: 30px;
     margin: auto;
@@ -1601,12 +1622,12 @@ footer{
 }
 #Shop__GoogleMap{
     width: 120px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     color: #fffaf8;
     font-weight: bold;
     background-color: #fb957c;
-    padding: 5px 0 5px 0;
+    padding: 5px;
     border: none;
     border-radius: 5px;
     transition: 0.5s;
