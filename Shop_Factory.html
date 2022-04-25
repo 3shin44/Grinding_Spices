@@ -28,11 +28,11 @@
         </label>
         <nav>
             <ul>
-                <li><a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a></li>
-                <li><a href="./Products.html">熱銷商品</a></li>
-                <li><a href="./Story.html">關於我們</a></li>
-                <li><a href="./News.html">最新消息</a></li>
-                <li><a href="./Shop.html">門市/製造廠</a></li>
+                <li><label id="LoginLabel_Small" for="LoginSwtich" class="SmallLogin MainFontColor"><i class="fa-solid fa-user"></i>Login</label></li>
+                <li><a class="HoverEffect1" href="./Products.html">熱銷商品</a></li>
+                <li><a class="HoverEffect1" href="./Story.html">關於我們</a></li>
+                <li><a class="HoverEffect1" href="./News.html">最新消息</a></li>
+                <li><a class="HoverEffect1" href="./Shop_Store.html">門市/製造廠</a></li>
             </ul>
             <span></span>
             <div class="SocialMedia">
@@ -52,19 +52,20 @@
         </nav>
         <div class="Logo">
             <img src="./images/GS_Logo.png">
-            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+            <h1 class="MainFontColor TextRegular">研磨香料</h1>
         </div>
         <div class="MemberCart">
-            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            
+            <label id="LoginLabel" for="LoginSwtich" class="ContentText_1 MainFontColor DesktopLogin HoverEffect1">Login</label>
             <a href="">
                 <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
             </a>
         </div>
-    </div>  
+    </div>
 
     <div class="Shop__Content">
         <article class="Background Shop__ArticleShop">
-            <h2 class="TitleText_3 MainFontColor">門市/製造廠 | Store/Factory</h2>
+            <h2 class="TitleText_3 MainFontColor">製造廠 Factory</h2>
             <section class="SecondBcgColor">
                 <div class="CarouselBox">
                     <div class="Silder">
@@ -73,6 +74,7 @@
                             <li><img class="GalleryPic" src="./images/Shop/Shop__Factory2.jpg"></li>
                             <li><img class="GalleryPic" src="./images/Shop/Shop__Factory3.jpg"></li>
                         </ul>
+                        <ul id="Indicator"></ul>                      
                     </div>
                 </div>
 
@@ -93,7 +95,6 @@
                     <p class="NoteText_2">適用於下載名稱本網站最終全家規模經過病人已經重要，每年已被裝置採購篇文章動畫迅速衝突吃飯，承諾遺憾日子立刻成長編號是否聯合全家好激動推薦完了儘管合適。</p>
                     <div class="Shop__SwitchBtn">
                         <button class="BtnType_2" id="ShopBtn_Store">門市/Store</button>
-                        <button class="BtnType_2" id="ShopBtn_Factory">製造廠/Factory</button>
                     </div>
                     
                 </div>
@@ -107,8 +108,8 @@
                 document.getElementById('ShopBtn_Store').addEventListener('click', function(){
                     document.location = './Shop_Store.html'});
 
-                document.getElementById('ShopBtn_Factory').addEventListener('click', function(){
-                    document.location = './Shop_Factory.html'});
+                // document.getElementById('ShopBtn_Factory').addEventListener('click', function(){
+                //     document.location = './Shop_Factory.html'});
 
                 document.getElementById('Shop__GoogleMap').addEventListener('click', function(){
                 document.location = 'https://www.google.com.tw/maps'});
@@ -123,44 +124,117 @@
         </script>
 
 
-        <script>
-            // RWD Carousel, using JS for set parental height
-            $(function(){
-                // delay 1500ms when page fully loaded, get Pic width to set parental height
-                // note: ratio of pics are 1:1, so take width as height
-                setTimeout(function(){
-                    $('.Silder').width($('.CarouselBox')[0].clientWidth);
-                    $('.Silder').height($('.CarouselBox')[0].clientWidth);
-                    $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
-                }, 1500);
-                
-                // reset width/height after window resize
-                $(window).resize(function(){
+<script>
+    // RWD Carousel, using JS for set parental height
+    $(function(){
+        // delay 1500ms when page fully loaded, get Pic width to set parental height
+        // note: ratio of pics are 1:1, so take width as height
+        setTimeout(function(){
+            $('.Silder').width($('.CarouselBox')[0].clientWidth);
+            $('.Silder').height($('.CarouselBox')[0].clientWidth);
+            $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
+
+            // add indicator and mark first one
+            let CarouselBoxWidth = $('.CarouselBox').width();
+            let ItemCount = $('.Gallery li').length;
+            for (let i =0; i<ItemCount; i++){
+                $('#Indicator').append(`<li></li>`);
+            }
+            $('#Indicator li:nth-child(1)').addClass('ClickDot');
+            $('.Gallery').width( CarouselBoxWidth*ItemCount);
+            $('.Gallery li').width(CarouselBoxWidth); 
+
+
+        }, 2000);
+        
+        // reset width/height after window resize
+        $(window).resize(function(){
                         $('.Silder').width($('.CarouselBox')[0].clientWidth);
                         $('.Silder').height($('.CarouselBox')[0].clientWidth);
                         $('.Gallery').width($('.CarouselBox')[0].clientWidth * $('.Gallery li').length);
+
+                        // add indicator and mark first one
+                        let CarouselBoxWidth = $('.CarouselBox').width();
+                        let ItemCount = $('.Gallery li').length;
+                        $('.Gallery').width( CarouselBoxWidth*ItemCount);
+                        $('.Gallery li').width(CarouselBoxWidth); 
                     }
                 );
             });
-            
-            // Carousel function
-            let Timer = 0;
-            function Carousel(){
-                let GalleryIndex = $('.Gallery li').length;
-                let GalleryPicWidth = $('.GalleryPic')[0].clientWidth;
-                $('.Gallery').animate({
-                    left: Timer * GalleryPicWidth * -1,
-                });
-                Timer++;
-                if (Timer == GalleryIndex){
-                    Timer = 0;
-                }
-            }
+    
+    // Carousel function
+    let Timer = 0;
+    function Carousel(){
+        let GalleryIndex = $('.Gallery li').length;
+        let GalleryPicWidth = $('.GalleryPic')[0].clientWidth;
+        $('.Gallery').animate({
+            left: Timer * GalleryPicWidth * -1,
+        });
+        if (Timer == 0){
+            // clear last one dot
+            $(`#Indicator li:nth-child(${GalleryIndex})`).removeClass('ClickDot');
+        }
 
-            $(function(){
-               setInterval(Carousel, 3000);
-            });
-        </script>
+        // clear previous ClickDot, set new one with pink
+        $(`#Indicator li:nth-child(${Timer})`).removeClass('ClickDot');
+        $(`#Indicator li:nth-child(${Timer+1})`).addClass('ClickDot');
+
+        Timer++;
+        if (Timer == GalleryIndex){
+            Timer = 0;
+        }
+    }
+
+    $(function(){
+       setInterval(Carousel, 3000);
+    });
+</script>
+
+  <!-- LoginBox/GuestBox -->
+  <input type="checkbox" id="LoginSwtich">
+  <label for="LoginSwtich" id="LoginBcg"></label>
+  <div class="LoginBox" id="LoginBox">
+      <table>
+          <thead><th colspan="2">會員登錄</th></thead>
+          <tr>
+              <td>帳號</td>
+              <td><input type="text" value="Guest" id="LoginID"></td>
+          </tr>
+          <tr>
+              <td>密碼</td>
+              <td><input type="password" value="Guest" id="LoginPW"></td>
+          </tr>
+          <tr>
+              <td colspan="2" id="LoginMsg"></td>
+          </tr>
+          <tr>
+              <td><button id="LoginConfirm">登入</button></td>
+              <td><button id="LoginCancel">取消</button></td>
+              
+          </tr>
+      </table>
+  </div>
+  <!-- GUEST Account -->
+  <input type="checkbox" id="GuestSwtich">
+  <label for="GuestSwtich" id="GuestBcg"></label>
+  <div class="GuestBox" id="GuestBox">
+    <table>
+        <thead><th colspan="2">會員資料</th></thead>
+        <tr>
+            <td>會員名稱</td>
+            <td>GUEST</td>
+        </tr>
+        <tr>
+            <td>會員編號</td>
+            <td>#9527</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="LoginOut">登出</button></td>
+        </tr>
+    </table>
+    </div>
+    <!-- LoginBox JS  LoginLabel_Small -->
+    <script src="./LoginProcess.js"></script>
 
 </body>
 </html>

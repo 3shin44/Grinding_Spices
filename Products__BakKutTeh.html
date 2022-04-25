@@ -28,11 +28,11 @@
         </label>
         <nav>
             <ul>
-                <li><a href="#" class="SmallLogin"><i class="fa-solid fa-user"></i>Login</a></li>
-                <li><a href="./Products.html">熱銷商品</a></li>
-                <li><a href="./Story.html">關於我們</a></li>
-                <li><a href="./News.html">最新消息</a></li>
-                <li><a href="#">門市/製造廠</a></li>
+                <li><label id="LoginLabel_Small" for="LoginSwtich" class="SmallLogin MainFontColor"><i class="fa-solid fa-user"></i>Login</label></li>
+                <li><a class="HoverEffect1" href="./Products.html">熱銷商品</a></li>
+                <li><a class="HoverEffect1" href="./Story.html">關於我們</a></li>
+                <li><a class="HoverEffect1" href="./News.html">最新消息</a></li>
+                <li><a class="HoverEffect1" href="./Shop_Store.html">門市/製造廠</a></li>
             </ul>
             <span></span>
             <div class="SocialMedia">
@@ -52,16 +52,16 @@
         </nav>
         <div class="Logo">
             <img src="./images/GS_Logo.png">
-            <h1 class="MainFontColor TitleText_1 TextRegular">研磨香料</h1>
+            <h1 class="MainFontColor TextRegular">研磨香料</h1>
         </div>
         <div class="MemberCart">
-            <a href="#" class="DesktopLogin MainFontColor">Login</a>
+            
+            <label id="LoginLabel" for="LoginSwtich" class="ContentText_1 MainFontColor DesktopLogin HoverEffect1">Login</label>
             <a href="">
                 <button class="Cart"><i class="fa-solid fa-cart-shopping fa-lg"></i></button>
             </a>
         </div>
     </div>
-
 
     <article class="Background Products__ArticleItem">
         <div class="Products__Item SecondBcgColor">
@@ -179,6 +179,52 @@
                 </div>
         </section>
       </footer>
+
+  <!-- LoginBox/GuestBox -->
+  <input type="checkbox" id="LoginSwtich">
+  <label for="LoginSwtich" id="LoginBcg"></label>
+  <div class="LoginBox" id="LoginBox">
+      <table>
+          <thead><th colspan="2">會員登錄</th></thead>
+          <tr>
+              <td>帳號</td>
+              <td><input type="text" value="Guest" id="LoginID"></td>
+          </tr>
+          <tr>
+              <td>密碼</td>
+              <td><input type="password" value="Guest" id="LoginPW"></td>
+          </tr>
+          <tr>
+              <td colspan="2" id="LoginMsg"></td>
+          </tr>
+          <tr>
+              <td><button id="LoginConfirm">登入</button></td>
+              <td><button id="LoginCancel">取消</button></td>
+              
+          </tr>
+      </table>
+  </div>
+        <!-- GUEST Account -->
+    <input type="checkbox" id="GuestSwtich">
+    <label for="GuestSwtich" id="GuestBcg"></label>
+    <div class="GuestBox" id="GuestBox">
+    <table>
+        <thead><th colspan="2">會員資料</th></thead>
+        <tr>
+            <td>會員名稱</td>
+            <td>GUEST</td>
+        </tr>
+        <tr>
+            <td>會員編號</td>
+            <td>#9527</td>
+        </tr>
+        <tr>
+            <td colspan="2"><button id="LoginOut">登出</button></td>
+        </tr>
+    </table>
+    </div>
+    <!-- LoginBox JS  LoginLabel_Small -->
+    <script src="./LoginProcess.js"></script>
 
 </body>
 </html>
