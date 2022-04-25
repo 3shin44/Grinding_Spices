@@ -92,11 +92,21 @@
                         </label>
                     </form>
                     <button class="BtnType_2">加入購物車</button>
-                    
-                    <p class="Products__Descript NoteText_1">
-                        ■深焙茶葉蛋<br>
-                        製作茶葉蛋的雞蛋須要先煮熟，然後把雞蛋的蛋殼略為敲裂，再把雞蛋放入以用茶葉、五香粉及醬油等調味料製作的滷水中烹調，使雞蛋帶有調味料的味道，並且在蛋白表面留下和蛋殼裂紋相對應的棕色花紋。
-                    </p>
+
+                    <div class="Products__Descript">
+                        <button id="Product__IntroBtn">
+                            品項介紹 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Intro">
+                            <p class="RegularFontColor NoteText_1">茶葉蛋，又名茶蛋、鹽茶蛋、五香蛋、五香茶葉蛋、茶雞蛋，是一種歷史悠久的蛋類料理。</p>
+                        </div>
+                        <button id="Product__RecipeBtn">
+                            範例食譜 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Recipe">
+                            <p class="RegularFontColor NoteText_1">製作茶葉蛋的雞蛋須要先煮熟，然後把雞蛋的蛋殼略為敲裂，再把雞蛋放入以用茶葉、五香粉及醬油等調味料製作的滷水中烹調，使雞蛋帶有調味料的味道，並且在蛋白表面留下和蛋殼裂紋相對應的棕色花紋。</p>
+                        </div>
+                    </div>
                     
                 </div>
                 <button class="BtnType_2" id="Return_Products">回商品目錄</button>
@@ -105,33 +115,6 @@
         </div>
 
     </article>
-
-<!-- JS for link -->
-<script>
-    function ToDo(){
-        // find all products and create link
-        document.getElementById('Return_Products').addEventListener('click', function(){
-            document.location = './Products.html'});
-
-        let Logo = document.getElementsByClassName("Logo");
-        Logo[0].addEventListener('click', function(){
-            document.location = './index.html'
-        });
-    }
-    window.addEventListener('load', ToDo, false);
-</script>
-
-
-<!-- JS for Gallery Pics -->
-    <script>
-        $(document).ready(function() {
-            $(".Preview").each(function() {
-                $(this).click(function() {
-                    $("#GalleryPic").attr('src', this.src);
-                });
-            });
-        });
-    </script>
 
     <!-- Copyright Announcement -->
     <footer>
@@ -157,6 +140,45 @@
                 </div>
         </section>
       </footer>
+
+      <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_Products').addEventListener('click', function(){
+                document.location = './Products.html'});
+    
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            });
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+    <!-- Slide thumbnail change big pic and Toggle Menu -->
+    <script>
+        $(document).ready(function() {
+            // Slide thumbnail change big pic
+            $("img[id!='GalleryPic']").each(function() {
+                $(this).click(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+                $(this).mouseover(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+            });
+
+            // Toggle Menu
+            $("#Product__IntroBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Intro").toggle(300, "linear");
+            });
+            $("#Product__RecipeBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Recipe").toggle(300, "linear");
+            });
+        });
+    </script>
 
 </body>
 </html>

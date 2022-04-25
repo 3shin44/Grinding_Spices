@@ -93,43 +93,27 @@
                     </form>
                     <button class="BtnType_2">加入購物車</button>
                     
-                    <p class="Products__Descript NoteText_1">
-                        ■薑黃<br>
-                        薑黃(<span style="font-style:italic;">Curcuma longa</span>)，又稱寶鼎香，為薑科薑黃屬植物，在一些亞洲國家稱作turmeric或kunyit。其根莖所磨成的深黃色粉末為咖哩的主要成份之一，也用在南洋料理，嚐起來味苦而辛，帶點土味。主成分薑黃素（curcumin）具有一些醫療保健的效果，因此薑黃也出現在中醫藥材中。
-                    </p>
-                    
+                    <div class="Products__Descript">
+                        <button id="Product__IntroBtn">
+                            品項介紹 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Intro">
+                            <p class="RegularFontColor NoteText_1">薑黃(<span style="font-style:italic;">Curcuma longa</span>)，又稱寶鼎香，為薑科薑黃屬植物，在一些亞洲國家稱作turmeric或kunyit。其根莖所磨成的深黃色粉末為咖哩的主要成份之一，也用在南洋料理，嚐起來味苦而辛，帶點土味。主成分薑黃素（curcumin）具有一些醫療保健的效果，因此薑黃也出現在中醫藥材中。</p>
+                        </div>
+                        <button id="Product__RecipeBtn">
+                            範例食譜 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Recipe">
+                            <p class="RegularFontColor NoteText_1">新鮮薑黃烘乾磨成粉即為薑黃粉，常見於咖哩料理，亦可用於炒菜、製成薑黃飯，還能加入牛奶或咖啡，飲用時別有一番風味。此外，薑黃粉也是天然的著色劑，可用於醃漬蔬菜、肉類以及海鮮，還能做成餅乾和醬料，是生活中萬用的調味料。</p>
+                        </div>
+                    </div>
                 </div>
                 <button class="BtnType_2" id="Return_Products">回商品目錄</button>
 
             </div>
 
         </div>
-
     </article>
-
-    <script>
-        function ToDo(){
-            // find all products and create link
-            document.getElementById('Return_Products').addEventListener('click', function(){
-                document.location = './Products.html'});
-    
-            let Logo = document.getElementsByClassName("Logo");
-            Logo[0].addEventListener('click', function(){
-                document.location = './index.html'
-            });
-        }
-        window.addEventListener('load', ToDo, false);
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $("img[id!='GalleryPic']").each(function() {
-                $(this).click(function() {
-                    $("#GalleryPic").attr('src', this.src);
-                });
-            });
-        });
-    </script>
 
     <!-- Copyright Announcement -->
     <footer>
@@ -155,6 +139,46 @@
                 </div>
         </section>
       </footer>
+
+    <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_Products').addEventListener('click', function(){
+                document.location = './Products.html'});
+    
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            });
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+
+<!-- Slide thumbnail change big pic and Toggle Menu -->
+    <script>
+        $(document).ready(function() {
+            // Slide thumbnail change big pic
+            $("img[id!='GalleryPic']").each(function() {
+                $(this).click(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+                $(this).mouseover(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+            });
+
+            // Toggle Menu
+            $("#Product__IntroBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Intro").toggle(300, "linear");
+            });
+            $("#Product__RecipeBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Recipe").toggle(300, "linear");
+            });
+        });
+    </script>
 
 </body>
 </html>

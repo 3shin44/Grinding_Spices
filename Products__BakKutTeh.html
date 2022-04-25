@@ -93,11 +93,22 @@
                     </form>
                     <button class="BtnType_2">加入購物車</button>
                     
-                    <p class="Products__Descript NoteText_1">
-                        ■肉骨茶<br>
-                        肉骨茶（英語：Bak kut teh）是馬來半島的一道湯菜。肉骨茶的起源可以追蹤於馬來西亞。之後也廣傳於中國大陸、臺灣、海外華人地區。<br>
-                        肉骨茶混合中藥（枸杞、黨參、當歸、玉竹、川芎）和香料（包括八角、茴香、桂皮、丁香、大蒜、甘草、花椒、甘蔗、羅漢果、胡椒）及肉排熬製多個小時的濃湯。在馬來西亞的一些高級餐館會加入海參和鮑魚一起熬製。 
-                    </p>
+                    <div class="Products__Descript">
+                        <button id="Product__IntroBtn">
+                            品項介紹 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Intro">
+                            <p class="RegularFontColor NoteText_1">肉骨茶（英語：Bak kut teh）是馬來半島的一道湯菜。肉骨茶的起源可以追蹤於馬來西亞。之後也廣傳於中國大陸、臺灣、海外華人地區。
+                            </p>
+                        </div>
+                        <button id="Product__RecipeBtn">
+                            範例食譜 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Recipe">
+                            <p class="RegularFontColor NoteText_1">肉骨茶混合中藥（枸杞、黨參、當歸、玉竹、川芎）和香料（包括八角、茴香、桂皮、丁香、大蒜、甘草、花椒、甘蔗、羅漢果、胡椒）及肉排熬製多個小時的濃湯。在馬來西亞的一些高級餐館會加入海參和鮑魚一起熬製。</p>
+                        </div>
+                    </div>
+
                 </div>
                 <button class="BtnType_2" id="Return_Products">回商品目錄</button>
             </div>
@@ -119,12 +130,27 @@
         window.addEventListener('load', ToDo, false);
     </script>
 
+    <!-- Slide thumbnail change big pic and Toggle Menu -->
     <script>
         $(document).ready(function() {
+            // Slide thumbnail change big pic
             $("img[id!='GalleryPic']").each(function() {
                 $(this).click(function() {
                     $("#GalleryPic").attr('src', this.src);
                 });
+                $(this).mouseover(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+            });
+
+            // Toggle Menu
+            $("#Product__IntroBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Intro").toggle(300, "linear");
+            });
+            $("#Product__RecipeBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Recipe").toggle(300, "linear");
             });
         });
     </script>

@@ -92,12 +92,21 @@
                         </label>
                     </form>
                     <button class="BtnType_2">加入購物車</button>
-                    
-                    <p class="Products__Descript NoteText_1">
-                        ■泰式椒麻<br>
-                        泰式椒麻雞是一種常見於台灣泰式餐廳的菜餚，主要透過花椒、酒與醬油來醃製去骨雞腿，裹粉油炸而成。關於其起源大致有兩種說法，一說是修改自雲南菜，另一說是在緬甸打工的雲南人在台灣所發明。<br>
-                        在新疆和四川也有叫作椒麻雞的菜，與台灣「泰式」椒麻雞的主要差別是不會油炸，而是水煮後淋油。
-                    </p>
+
+                    <div class="Products__Descript">
+                        <button id="Product__IntroBtn">
+                            品項介紹 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Intro">
+                            <p class="RegularFontColor NoteText_1">泰式椒麻雞是一種常見於台灣泰式餐廳的菜餚，主要透過花椒、酒與醬油來醃製去骨雞腿，裹粉油炸而成。關於其起源大致有兩種說法，一說是修改自雲南菜，另一說是在緬甸打工的雲南人在台灣所發明。在新疆和四川也有叫作椒麻雞的菜，與台灣「泰式」椒麻雞的主要差別是不會油炸，而是水煮後淋油。</p>
+                        </div>
+                        <button id="Product__RecipeBtn">
+                            範例食譜 <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div class="Product__Recipe">
+                            <p class="RegularFontColor NoteText_1">椒麻雞的製作方法各家皆有不同。主要透過花椒、酒、烏醋，與醬油來醃製去骨雞腿，裹粉油炸而成。並淋上以魚露、辣油，和糖所調製的醬汁。最後再灑上蒜末、辣椒末、花生碎片、白芝麻和莞荽而成</p>
+                        </div>
+                    </div>
                     
                 </div>
                 <button class="BtnType_2" id="Return_Products">回商品目錄</button>
@@ -107,30 +116,6 @@
         </div>
 
     </article>
-
-    <script>
-        function ToDo(){
-            // find all products and create link
-            document.getElementById('Return_Products').addEventListener('click', function(){
-                document.location = './Products.html'});
-    
-            let Logo = document.getElementsByClassName("Logo");
-            Logo[0].addEventListener('click', function(){
-                document.location = './index.html'
-            });
-        }
-        window.addEventListener('load', ToDo, false);
-    </script>
-
-    <script>
-        $(document).ready(function() {
-            $("img[id!='GalleryPic']").each(function() {
-                $(this).click(function() {
-                    $("#GalleryPic").attr('src', this.src);
-                });
-            });
-        });
-    </script>
 
     <!-- Copyright Announcement -->
     <footer>
@@ -156,6 +141,46 @@
                 </div>
         </section>
       </footer>
+
+      <script>
+        function ToDo(){
+            // find all products and create link
+            document.getElementById('Return_Products').addEventListener('click', function(){
+                document.location = './Products.html'});
+    
+            let Logo = document.getElementsByClassName("Logo");
+            Logo[0].addEventListener('click', function(){
+                document.location = './index.html'
+            });
+        }
+        window.addEventListener('load', ToDo, false);
+    </script>
+
+
+<!-- Slide thumbnail change big pic and Toggle Menu -->
+    <script>
+        $(document).ready(function() {
+            // Slide thumbnail change big pic
+            $("img[id!='GalleryPic']").each(function() {
+                $(this).click(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+                $(this).mouseover(function() {
+                    $("#GalleryPic").attr('src', this.src);
+                });
+            });
+
+            // Toggle Menu
+            $("#Product__IntroBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Intro").toggle(300, "linear");
+            });
+            $("#Product__RecipeBtn").click(function(){
+                $("i", this).toggleClass("fa-angle-down fa-angle-up");
+                $(".Product__Recipe").toggle(300, "linear");
+            });
+        });
+    </script>
 
 </body>
 </html>
