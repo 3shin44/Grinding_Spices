@@ -53,7 +53,6 @@ $(function(){
     addEventListener('resize', function(){
         let newWidth = window.innerWidth;
        if ( newWidth != OriginWindowWidth){
-           console.log('Changes');
            GalleryWidth = ($('.Main__CarouselBox')[0].clientWidth + PicMarginRight )* $('.GalleryOrigin li').length;
            GalleryFirst = 0;
            GalleryClone = GalleryWidth;
@@ -79,8 +78,17 @@ $(function(){
     }
 
     let InfiniteCarousel;
+    // RWD speed control
+    let CarouselFreq = 15;
+    if (OriginWindowWidth>1200){
+        CarouselFreq = 10;
+    }else if(OriginWindowWidth>996 && OriginWindowWidth<1200){
+        CarouselFreq = 20;
+    }else{
+        CarouselFreq = 30;
+    }
     setTimeout(function(){  //clear previous timer 
-        InfiniteCarousel = setInterval(Carousel, 15);
+        InfiniteCarousel = setInterval(Carousel, CarouselFreq);
         }, 2000);
 
 });
